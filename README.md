@@ -1,5 +1,5 @@
 
-## Logical-Framework
+## Natural-Deduction-Proof-Checker
 2-1, CS-F214, Logic in CS Assignment II. We have to make
  a framework to check the
 proof of natural deduction in Propositional Logic/ Predicate Logic.
@@ -20,8 +20,8 @@ proof of natural deduction in Propositional Logic/ Predicate Logic.
 First line:
 n (number of statements)
 Next n lines:
-<statement>/<rule>[ /line1[ /line2 ] ] (parameter in [] is optional whose existence will be determined
-by <rule>)
+<statement>/< rule >[ /line1[ /line2 ] ] (parameter in [] is optional whose existence will be determined
+by < rule > )
 
 ### Output:
 Valid Proof (or) Invalid Proof
