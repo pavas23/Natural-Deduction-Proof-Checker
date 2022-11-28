@@ -16,18 +16,20 @@ proof of natural deduction in Propositional Logic/ Predicate Logic.
 (<statement> → <statement>)
 <rule> ::= ∧i | ∧e1 | ∧e2 | ∨i1 | ∨i2 | →e |P
 
-### Input:
+### Input
 First line:
 n (number of statements)
 Next n lines:
 <statement>/< rule >[ /line1[ /line2 ] ] (parameter in [] is optional whose existence will be determined
 by < rule > )
 
-### Output:
+### Output
 Valid Proof (or) Invalid Proof
 
-### Assumptions:
+### Assumptions
 1. Line number starts from 1.
 2. <statement> should be perfectly parenthesized, e.g. ((a ∧ b) ∧ c) is valid, (a ∧ b) ∧ c is invalid, ((a ∧
 b)) is invalid, (a ∧ b) is valid, (a ∧ b ∧ c) is invalid, p is valid, (p) is invalid.
 3. ¬ can be succeeded by a literal or ‘(‘ only.
+
+
