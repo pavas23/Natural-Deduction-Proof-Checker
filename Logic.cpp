@@ -552,6 +552,15 @@ bool modusTollens(string proof,string premises[],string proofLines[]){
     return false;
 }
 
+
+
+// TODO use STACK in MT as if > sign is already there in left part then it will crash
+// TODO use STACK in implies Elimination also same reason
+// TODO use STACK in conjunctionElimination as ^ sign is already there is left part then program will crash
+// TODO use STACK in disjunctionIntroduction as well if + sign is already there is left part then the program // will crash
+
+
+
 int main(void)
 {
     int n;
