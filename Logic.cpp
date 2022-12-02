@@ -653,7 +653,7 @@ int main(void)
 
     // now we will store all the premises in the array of strings.
     string premises[n]; // making of max n size
-    int noOfPremises;
+    int noOfPremises=0;
     for (int i = 0; i < n; i++)
     {
         int indexOfP = proofLines[i].find('P');
@@ -667,9 +667,55 @@ int main(void)
                 }
         }
     }
-    // cout << conjunctionIntroduction(proofLines[2], premises, proofLines);
 
-    
+    // now ownwards all statements are not premises
+
+    for(int i=noOfPremises;i<n;i++){
+        if(proofLines[i].find('^') < proofLines[i].length()){
+            // so this is either ^i or ^e
+            if(proofLines[i][proofLines[i].find('^')+1] == 'i'){
+                // and intro
+                if(!conjunctionIntroduction(proofLines[i],premises,proofLines)){
+                    cout<<"Invalid Proof!"<<endl;
+                    exit(0);
+                }
+            }
+            else if(proofLines[i][proofLines[i].find('^')+1] == 'e'){
+                // and elimination
+                if(!conjunctionElimination(proofLines[i],premises,proofLines)){
+                    cout<<"Invalid Proof!"<<endl;
+                    exit(0);
+                }
+            }
+        }
+        else if(proofLines[i].find('+') < proofLines[i].length()){
+            // or intro
+            if(!disjunctionIntroduction(proofLines[i],premises,proofLines)){
+                cout<<"Invalid Proof!"<<endl;
+                exit(0);
+            }
+        }
+        else if(proofLines[i].find('>') < proofLines[i].length()){
+            // impl elimination
+            if(!implicationElimination(proofLines[i],premises,proofLines)){
+                cout<<"Invalid Proof!"<<endl;
+                exit(0);
+            }
+        }
+        else if(proofLines[i].find("MT") < proofLines[i].length()){
+            // MT
+            if(!modusTollens(proofLines[i],premises,proofLines)){
+                cout<<"Invalid Proof!"<<endl;
+                exit(0);
+            }
+        }
+        else{
+            cout<<"Invalid Proof!"<<endl;
+            exit(0);
+        }
+    }
+
+    cout<<"Valid Proof !!"<<endl;
     return 0;
 }
 
