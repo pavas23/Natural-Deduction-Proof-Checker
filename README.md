@@ -2,7 +2,7 @@
 ## Natural-Deduction-Proof-Checker
 2-1, CS-F214, Logic in CS Assignment II. We have to make
  a framework to check the
-proof of natural deduction in Propositional Logic/ Predicate Logic.
+proof of ```natural deduction``` in Propositional Logic/ Predicate Logic.
 
 ### Allowed Proof Rules
 - Premise
@@ -28,7 +28,7 @@ Valid Proof (or) Invalid Proof
 
 ### Assumptions
 1. Line number starts from 1.
-2. <statement> should be perfectly parenthesized, e.g. ((a ∧ b) ∧ c) is valid, (a ∧ b) ∧ c is invalid, ((a ∧
+2. <statement> should be ```perfectly parenthesized```, e.g. ((a ∧ b) ∧ c) is valid, (a ∧ b) ∧ c is invalid, ((a ∧
 b)) is invalid, (a ∧ b) is valid, (a ∧ b ∧ c) is invalid, p is valid, (p) is invalid.
 3. ¬ can be succeeded by a literal or ‘(‘ only.
 
