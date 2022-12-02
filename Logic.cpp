@@ -666,6 +666,7 @@ int main(void)
 
     // now ownwards all statements are not premises
     int index = 0;
+    int flag = 0;
     for(int i=0;i<n;i++){
         index = proofLines[i].find('/');
         if(index < proofLines[i].length()){
@@ -676,8 +677,8 @@ int main(void)
                         if(!conjunctionIntroduction(proofLines[i],proofLines)){
                             cout<<"Invalid Proof!"<<endl;
                             cout<<"Error in line Number "<<i+1<<endl;
-                            cout<<"*************************************************************************"<<endl<<endl;
-                            exit(0);
+                            flag = 1;
+                            break;
                         }
                     }
                     else if( (index+2 < proofLines[i].length()) && (proofLines[i][index+2] == 'e')){
@@ -685,15 +686,15 @@ int main(void)
                         if(!conjunctionElimination(proofLines[i],proofLines)){
                             cout<<"Invalid Proof!"<<endl;
                             cout<<"Error in line Number "<<i+1<<endl;
-                            cout<<"*************************************************************************"<<endl<<endl;
-                            exit(0);
+                            flag = 1;
+                            break;
                         }
                     }
                     else{
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
-                        cout<<"*************************************************************************"<<endl<<endl;
-                        exit(0);
+                        flag = 1;
+                        break;
                     }
                 }
                 else if( (index+1 < proofLines[i].length()) && (proofLines[i][index+1] == '+')){
@@ -701,8 +702,8 @@ int main(void)
                     if(!disjunctionIntroduction(proofLines[i],proofLines)){
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
-                        cout<<"*************************************************************************"<<endl<<endl;
-                        exit(0);
+                        flag = 1;
+                        break;
                     }
                 }
                 else if( (index+1 < proofLines[i].length()) && (proofLines[i][index+1] == '>')){
@@ -710,8 +711,8 @@ int main(void)
                     if(!implicationElimination(proofLines[i],proofLines)){
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
-                        cout<<"*************************************************************************"<<endl<<endl;
-                        exit(0);
+                        flag = 1;
+                        break;
                     }
                 }
                 else if((index+1 < proofLines[i].length()) && (proofLines[i][index+1] == 'M')){
@@ -719,8 +720,8 @@ int main(void)
                     if(!modusTollens(proofLines[i],proofLines)){
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
-                        cout<<"*************************************************************************"<<endl<<endl;
-                        exit(0);
+                        flag = 1;
+                        break;
                     }
                 }
                 else if((index+1 < proofLines[i].length()) && (proofLines[i][index+1] == 'P')){
@@ -730,13 +731,15 @@ int main(void)
         else{
                 cout<<"Invalid Proof!"<<endl;
                 cout<<"Error in line Number "<<i+1<<endl;
-                cout<<"*************************************************************************"<<endl<<endl;
-                exit(0);
+                flag = 1;
+                break;
         }
     
     }
 
-    cout<<"Valid Proof !!"<<endl;
+    if(flag == 0){
+        cout<<"Valid Proof !!"<<endl;
+    }
     cout<<"*************************************************************************"<<endl<<endl;
 
     return 0;
