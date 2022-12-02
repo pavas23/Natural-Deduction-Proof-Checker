@@ -314,7 +314,7 @@ bool disjunctionIntroduction(string proof, string premises[], string proofLines[
                 stack.pop();
             }
         }
-        
+
         // checking wheter it is i1 or i2
         int typeOfDisjunctionIntroduction = proof[indexOfDisjunction+1];
         typeOfDisjunctionIntroduction = int(typeOfDisjunctionIntroduction)-48;
@@ -340,6 +340,84 @@ bool disjunctionIntroduction(string proof, string premises[], string proofLines[
     }
     return false;
 }
+
+/*
+<------------------------------------------------------------------------------------------------------------>
+Conjunction Elimination
+<------------------------------------------------------------------------------------------------------------>
+*/
+
+bool conjunctionElimination(string proof,string premises[],string proofLines[]){
+
+    int indexOfConjunctionSymbol = proof.find('^');
+    // TODO fix when there is e in the formula itself it will crash there
+    int indexOfConjunctionElimination = proof.find('e');
+
+    // storing the result in string
+
+    string result;
+    if(indexOfConjunctionElimination < proof.length()){
+
+        // means this is conjunction elimination rule
+        for(int i=0;i<indexOfConjunctionSymbol-1;i++){
+            result += proof[i];
+        }
+    }
+
+    // finding the type of elimination 1 or 2
+    int typeOfConjunctionElimination = proof[indexOfConjunctionElimination+1];
+    typeOfConjunctionElimination = int(typeOfConjunctionElimination) - 48;
+
+    // finding the line number
+
+    int lineNumber = proof[indexOfConjunctionElimination+3];
+    lineNumber = int(lineNumber)-48;
+
+    cout<<"The line number is "<<lineNumber<<endl;
+    // matching the result from proofLines
+
+    string conjunctionLine = proofLines[lineNumber-1];
+
+    int indexOfConjunctionSymbol1 = conjunctionLine.find('^');
+    int indexOfSlash = conjunctionLine.find('/');
+
+
+    // making strings for left part before the '^' and right part after '^'
+    string leftPart;
+    string rightPart;
+
+    cout<<"The conjunction line is "<<conjunctionLine<<endl;
+
+    // making stack for storing the proof of conjunctionIntroduction
+    for(int i=1;i<indexOfConjunctionSymbol1;i++){
+        leftPart += conjunctionLine[i];
+    }
+
+    for(int i=indexOfConjunctionSymbol1+1;i<indexOfSlash-1;i++){
+        rightPart += conjunctionLine[i];
+    }
+
+    cout<<"after left and right part"<<endl;
+
+    cout<<"The left part is "<<leftPart<<endl;
+    cout<<"The right part is "<<rightPart<<endl;
+
+    if(typeOfConjunctionElimination == 1){
+        if(leftPart == result){
+            return true;
+        }
+        return false;
+    }
+    else if(typeOfConjunctionElimination == 2){
+        if(rightPart == result){
+            return true;
+        }
+        return false;
+    }
+    return false;
+}
+
+
 
 int main(void)
 {
@@ -374,13 +452,12 @@ int main(void)
     }
 
     // for printing the premises
-    // for(int i=0;i<noOfPremises;i++){
-    //     cout<<premises[i]<<endl;
-    // }
+    cout<<"The premises are:"<<endl;
+    for(int i=0;i<noOfPremises;i++){
+        cout<<premises[i]<<endl;
+    }
 
-    // function for checking and introduction
-    cout << disjunctionIntroduction(proofLines[2], premises, proofLines);
-    
+    cout << conjunctionElimination(proofLines[2], premises, proofLines);
     return 0;
 }
 
