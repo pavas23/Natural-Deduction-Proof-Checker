@@ -354,10 +354,9 @@ bool conjunctionElimination(string proof,string premises[],string proofLines[]){
     int indexOfConjunctionElimination = proof.find('e');
 
     // storing the result in string
-
     string result;
-    if(indexOfConjunctionElimination < proof.length()){
 
+    if(indexOfConjunctionElimination < proof.length()){
         // means this is conjunction elimination rule
         for(int i=0;i<indexOfConjunctionSymbol-1;i++){
             result += proof[i];
@@ -369,13 +368,10 @@ bool conjunctionElimination(string proof,string premises[],string proofLines[]){
     typeOfConjunctionElimination = int(typeOfConjunctionElimination) - 48;
 
     // finding the line number
-
     int lineNumber = proof[indexOfConjunctionElimination+3];
     lineNumber = int(lineNumber)-48;
 
-    cout<<"The line number is "<<lineNumber<<endl;
     // matching the result from proofLines
-
     string conjunctionLine = proofLines[lineNumber-1];
 
     int indexOfConjunctionSymbol1 = conjunctionLine.find('^');
@@ -397,11 +393,6 @@ bool conjunctionElimination(string proof,string premises[],string proofLines[]){
         rightPart += conjunctionLine[i];
     }
 
-    cout<<"after left and right part"<<endl;
-
-    cout<<"The left part is "<<leftPart<<endl;
-    cout<<"The right part is "<<rightPart<<endl;
-
     if(typeOfConjunctionElimination == 1){
         if(leftPart == result){
             return true;
@@ -417,7 +408,71 @@ bool conjunctionElimination(string proof,string premises[],string proofLines[]){
     return false;
 }
 
+bool impliesElimination(string proof,string premises[],string proofLines[]){
 
+    int indexOfImplicationSymbol = proof.find('>');
+
+    if(indexOfImplicationSymbol < proof.length()){
+        // this means this rule is implies elimination
+        string result;
+        for(int i=0;i<indexOfImplicationSymbol-1;i++){
+            result += proof[i];
+        }
+
+        cout<<"The result is "<<result<<endl;
+
+        // now finding the index of line numbers
+        int lineNumber1 = proof[indexOfImplicationSymbol+3];
+        int lineNumber2 = proof[indexOfImplicationSymbol+5];
+
+        lineNumber1 = int(lineNumber1) - 48;
+        lineNumber2 = int(lineNumber2) - 48;
+
+        // as first line number is the implies statement in the above proof lines
+        // and second line number corresponds to the phi in the implies statement
+
+        string impliesStatement  = proofLines[lineNumber1-1];
+        
+        // finding the left part and right part of the implies statement.
+        int indexOfImpliesSymbol = impliesStatement.find('>');
+        int indexOfSlash = impliesStatement.find('/');
+
+        // left Part
+        string leftPart;
+        for(int i=1;i<indexOfImpliesSymbol;i++){
+            leftPart += impliesStatement[i];
+        }
+
+        //right part
+        string rightPart;
+        for(int i = indexOfImpliesSymbol+1;i<indexOfSlash-1;i++){
+            rightPart += impliesStatement[i];
+        }
+
+        cout<<"The left part is "<<leftPart<<endl;
+        cout<<"The right part is "<<rightPart<<endl;
+
+        // now matching the left part of the implies statement with the statement in the given line number 2
+        string givenLeftPart = proofLines[lineNumber2-1];
+        // now we need to find the part of the givenLeftPart before the slash
+        int indexOfSlashInGivenLeftPart = givenLeftPart.find('/');
+        string newGivenLeftPart;
+        for(int i=0;i<indexOfSlashInGivenLeftPart;i++){
+            newGivenLeftPart += givenLeftPart[i];
+        }
+        
+        if(leftPart == newGivenLeftPart){
+            // this means that in p>q, p is given and true
+            // now we have to check that result is equal to right part
+            if(result == rightPart){
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+    return false;
+}
 
 int main(void)
 {
@@ -457,7 +512,7 @@ int main(void)
         cout<<premises[i]<<endl;
     }
 
-    cout << conjunctionElimination(proofLines[2], premises, proofLines);
+    cout << impliesElimination(proofLines[2], premises, proofLines);
     return 0;
 }
 
