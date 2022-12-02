@@ -193,10 +193,8 @@ Conjunction Introduction
 
 bool conjunctionIntroduction(string proof,string proofLines[])
 {
-    int indexOfConjunctionSymbol = proof.find('^');
-    int indexOfConjunction = proof.find('i');
     int indexOfSlashInProof = proof.find('/');
-    indexOfConjunction = indexOfSlashInProof + 2;
+    int indexOfConjunction = indexOfSlashInProof + 2;
     // making strings for left part before the '^' and right part after '^'
     string leftPart;
     string rightPart;
@@ -284,10 +282,8 @@ Disjunction Introduction
 
 bool disjunctionIntroduction(string proof,string proofLines[])
 {
-    int indexOfDisjunctionSymbol = proof.find('+');
-    int indexOfDisjunction = proof.find('i');
     int indexOfSlashInProof = proof.find('/');
-    indexOfDisjunction = indexOfSlashInProof+2;
+    int indexOfDisjunction = indexOfSlashInProof+2;
     // making strings for left part before the '^' and right part after '^'
     string leftPart;
     string rightPart;
@@ -369,14 +365,11 @@ Conjunction Elimination
 
 bool conjunctionElimination(string proof,string proofLines[]){
 
-    int indexOfConjunctionSymbol = proof.find('^');
-    // TODO fix when there is e in the formula itself it will crash there
-    int indexOfConjunctionElimination = proof.find('e');
     int indexOfSlashInProof = proof.find('/');
-
     // storing the result in string
     string result;
-    indexOfConjunctionSymbol = indexOfSlashInProof+1;
+    int indexOfConjunctionSymbol = indexOfSlashInProof+1;
+    int indexOfConjunctionElimination = indexOfSlashInProof+2;
     if(indexOfConjunctionElimination < proof.length()){
         // means this is conjunction elimination rule
         for(int i=0;i<indexOfConjunctionSymbol-1;i++){
@@ -465,9 +458,8 @@ Implication Elimination
 
 bool implicationElimination(string proof,string proofLines[]){
 
-    int indexOfImplicationSymbol = proof.find('>');
     int indexOfSlash = proof.find('/');
-    indexOfImplicationSymbol = indexOfSlash+1;
+    int indexOfImplicationSymbol = indexOfSlash+1;
 
     if(indexOfImplicationSymbol < proof.length()){
         // this means this rule is implies elimination
@@ -565,9 +557,8 @@ Modus Tollens
 bool modusTollens(string proof,string proofLines[]){
 
     // finding the index of MT first
-    int indexOfMT = proof.find("MT"); // will give the index where the substring starts
     int indexOfSlashInProof = proof.find('/');
-    indexOfMT = indexOfSlashInProof + 1;
+    int indexOfMT = indexOfSlashInProof + 1;
 
     if(indexOfMT < proof.length()){
         // means this rule is MT
@@ -659,6 +650,7 @@ bool modusTollens(string proof,string proofLines[]){
 
 int main(void)
 {
+    cout<<"*************************************************************************"<<endl<<endl;
     int n=0;
     cout << "Enter the number of lines in proof rule: ";
     cin >> n;
@@ -684,6 +676,7 @@ int main(void)
                         if(!conjunctionIntroduction(proofLines[i],proofLines)){
                             cout<<"Invalid Proof!"<<endl;
                             cout<<"Error in line Number "<<i+1<<endl;
+                            cout<<"*************************************************************************"<<endl<<endl;
                             exit(0);
                         }
                     }
@@ -692,12 +685,14 @@ int main(void)
                         if(!conjunctionElimination(proofLines[i],proofLines)){
                             cout<<"Invalid Proof!"<<endl;
                             cout<<"Error in line Number "<<i+1<<endl;
+                            cout<<"*************************************************************************"<<endl<<endl;
                             exit(0);
                         }
                     }
                     else{
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
+                        cout<<"*************************************************************************"<<endl<<endl;
                         exit(0);
                     }
                 }
@@ -706,6 +701,7 @@ int main(void)
                     if(!disjunctionIntroduction(proofLines[i],proofLines)){
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
+                        cout<<"*************************************************************************"<<endl<<endl;
                         exit(0);
                     }
                 }
@@ -714,6 +710,7 @@ int main(void)
                     if(!implicationElimination(proofLines[i],proofLines)){
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
+                        cout<<"*************************************************************************"<<endl<<endl;
                         exit(0);
                     }
                 }
@@ -722,6 +719,7 @@ int main(void)
                     if(!modusTollens(proofLines[i],proofLines)){
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
+                        cout<<"*************************************************************************"<<endl<<endl;
                         exit(0);
                     }
                 }
@@ -732,12 +730,15 @@ int main(void)
         else{
                 cout<<"Invalid Proof!"<<endl;
                 cout<<"Error in line Number "<<i+1<<endl;
+                cout<<"*************************************************************************"<<endl<<endl;
                 exit(0);
         }
     
     }
 
     cout<<"Valid Proof !!"<<endl;
+    cout<<"*************************************************************************"<<endl<<endl;
+
     return 0;
 }
 
