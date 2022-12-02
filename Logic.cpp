@@ -207,7 +207,11 @@ bool conjunctionIntroduction(string proof, string premises[], string proofLines[
             // push the proof in reverse order in stack
             stack.push(proof[indexOfConjunction-2-i-1]);
         }
+
         // now leftPart is before the ^ symbol
+        // This has time complexity as O(n) only as we are iterating once over every element
+        // if k elements are inside ( and ) then we only iterate for remaining n-k elements in else so overall n only
+
         while(stack.top() != '^'){
             if(stack.top() == '('){
                 while(stack.top() != ')'){
@@ -374,23 +378,50 @@ bool conjunctionElimination(string proof,string premises[],string proofLines[]){
     // matching the result from proofLines
     string conjunctionLine = proofLines[lineNumber-1];
 
-    int indexOfConjunctionSymbol1 = conjunctionLine.find('^');
     int indexOfSlash = conjunctionLine.find('/');
-
 
     // making strings for left part before the '^' and right part after '^'
     string leftPart;
     string rightPart;
 
-    cout<<"The conjunction line is "<<conjunctionLine<<endl;
+    // making object of stack class
+    Stack stack;
 
-    // making stack for storing the proof of conjunctionIntroduction
-    for(int i=1;i<indexOfConjunctionSymbol1;i++){
-        leftPart += conjunctionLine[i];
+    for(int i = 1;i<indexOfSlash-1;i++){
+        stack.push(conjunctionLine[indexOfSlash-1-i]);
     }
 
-    for(int i=indexOfConjunctionSymbol1+1;i<indexOfSlash-1;i++){
-        rightPart += conjunctionLine[i];
+    while(stack.top() != '^'){
+        if(stack.top() == '('){
+            while(stack.top() != ')'){
+                leftPart += stack.top();
+                stack.pop();
+            }
+            leftPart += stack.top();
+            stack.pop();
+        }
+        else{
+            leftPart += stack.top();
+            stack.pop();
+        }
+    }
+
+    // now removing the ^ symbol
+    stack.pop();
+
+    while(stack.size() != 0){
+        if(stack.top() == '('){
+            while(stack.top() != ')'){
+                rightPart += stack.top();
+                stack.pop();
+            }
+            rightPart += stack.top();
+            stack.pop();
+        }
+        else{
+            rightPart += stack.top();
+            stack.pop();
+        }
     }
 
     if(typeOfConjunctionElimination == 1){
@@ -415,7 +446,7 @@ Implication Elimination
 <------------------------------------------------------------------------------------------------------------>
 */
 
-bool impliesElimination(string proof,string premises[],string proofLines[]){
+bool implicationElimination(string proof,string premises[],string proofLines[]){
 
     int indexOfImplicationSymbol = proof.find('>');
 
@@ -439,25 +470,55 @@ bool impliesElimination(string proof,string premises[],string proofLines[]){
         string impliesStatement  = proofLines[lineNumber1-1];
         
         // finding the left part and right part of the implies statement.
-        int indexOfImpliesSymbol = impliesStatement.find('>');
+        string leftPart;
+        string rightPart;
         int indexOfSlash = impliesStatement.find('/');
 
-        // left Part
-        string leftPart;
-        for(int i=1;i<indexOfImpliesSymbol;i++){
-            leftPart += impliesStatement[i];
+        Stack stack;
+
+        //pushing the elements in stack in reverse order
+        for(int i=1;i<indexOfSlash-1;i++){
+            stack.push(impliesStatement[indexOfSlash-1-i]);
         }
 
-        //right part
-        string rightPart;
-        for(int i = indexOfImpliesSymbol+1;i<indexOfSlash-1;i++){
-            rightPart += impliesStatement[i];
+        while(stack.top() != '>'){
+            if(stack.top() == '('){
+                while(stack.top() != ')'){
+                    leftPart += stack.top();
+                    stack.pop();
+                }
+                leftPart += stack.top();
+                stack.pop();
+            }
+            else{
+                leftPart += stack.top();
+                stack.pop();
+            }
+        }
+
+        // now removing the > symbol
+        stack.pop();
+
+        while(stack.size() != 0){
+            if(stack.top() == '('){
+                while(stack.top() != ')'){
+                    rightPart += stack.top();
+                    stack.pop();
+                }
+                rightPart += stack.top();
+                stack.pop();
+            }
+            else{
+                rightPart += stack.top();
+                stack.pop();
+            }
         }
 
         // now matching the left part of the implies statement with the statement in the given line number 2
         string givenLeftPart = proofLines[lineNumber2-1];
         // now we need to find the part of the givenLeftPart before the slash
         int indexOfSlashInGivenLeftPart = givenLeftPart.find('/');
+
         string newGivenLeftPart;
         for(int i=0;i<indexOfSlashInGivenLeftPart;i++){
             newGivenLeftPart += givenLeftPart[i];
@@ -494,9 +555,6 @@ bool modusTollens(string proof,string premises[],string proofLines[]){
             result += proof[i];
         }
 
-        // cout<<"The result is "<<result<<endl;
-
-
         // finding the line number now in which premises for MT are present
         int lineNumber1 = proof[indexOfMT+3];
         int lineNumber2 = proof[indexOfMT+5];
@@ -505,27 +563,56 @@ bool modusTollens(string proof,string premises[],string proofLines[]){
         lineNumber2 = int(lineNumber2) - 48;
 
         string impliesStatement = proofLines[lineNumber1-1];
+
         // now we have to find the left and right parts of the implication statement
-
-        int indexOfImpliesInImpliesStatement = impliesStatement.find('>');
         int indexOfSlashInImpliesStatement = impliesStatement.find('/');
-
-        // leftPart
+        Stack stack;
         string leftPart;
-        for(int i=1;i<indexOfImpliesInImpliesStatement;i++){
-            leftPart += impliesStatement[i];
+        string rightPart;
+
+        // pushing the elements in stack in reverse order
+        for(int i=1;i<indexOfSlashInImpliesStatement-1;i++){
+            stack.push(impliesStatement[indexOfSlashInImpliesStatement-1-i]);
         }
 
-        // right part
-        string rightPart;
-        for(int i=indexOfImpliesInImpliesStatement+1;i<indexOfSlashInImpliesStatement-1;i++){
-            rightPart += impliesStatement[i];
+        while(stack.top() != '>'){
+            if(stack.top() == '('){
+                while(stack.top() != ')'){
+                    // cout<<"hello"<<endl;
+                    leftPart += stack.top();
+                    stack.pop();
+                }
+                leftPart += stack.top();
+                stack.pop();
+            }
+            else{
+                leftPart += stack.top();
+                stack.pop();
+            }
+        }
+
+        // now removing the > symbol
+        stack.pop();
+
+        while(stack.size() != 0){
+            if(stack.top() == '('){
+                while(stack.top() != ')'){
+                    rightPart += stack.top();
+                    stack.pop();
+                }
+                rightPart += stack.top();
+                stack.pop();
+            }
+            else{
+                rightPart += stack.top();
+                stack.pop();
+            }
         }
 
         // now finding the ~psi given by lineNumber2
-
         string negationOfRightPart = proofLines[lineNumber2-1];
         int indexOfSlashInNegationOfRightPart = negationOfRightPart.find('/');
+
         string newNegationOfRightPart;
         for(int i=0;i<indexOfSlashInNegationOfRightPart;i++){
             newNegationOfRightPart += negationOfRightPart[i];
@@ -533,13 +620,10 @@ bool modusTollens(string proof,string premises[],string proofLines[]){
 
         string rightPartAfterNegationInImpliesStatement = "~" + rightPart;
 
-        // cout<<"rightPartAfterNegationInImpliesStatement: "<<rightPartAfterNegationInImpliesStatement<<endl;
-
         if(newNegationOfRightPart ==rightPartAfterNegationInImpliesStatement){
+
             // now we have to check wheter result matches with negation of left part in implies statement
             string leftPartAfterNegationInImplicationStatement = "~" + leftPart;
-
-            // cout<<"leftPartAfterNegationInImplicationStatement: "<<leftPartAfterNegationInImplicationStatement<<endl;
 
             if(leftPartAfterNegationInImplicationStatement == result){
                 return true;
@@ -551,15 +635,6 @@ bool modusTollens(string proof,string premises[],string proofLines[]){
     }
     return false;
 }
-
-
-
-// TODO use STACK in MT as if > sign is already there in left part then it will crash
-// TODO use STACK in implies Elimination also same reason
-// TODO use STACK in conjunctionElimination as ^ sign is already there is left part then program will crash
-// TODO use STACK in disjunctionIntroduction as well if + sign is already there is left part then the program // will crash
-
-
 
 int main(void)
 {
@@ -592,14 +667,9 @@ int main(void)
                 }
         }
     }
+    // cout << conjunctionIntroduction(proofLines[2], premises, proofLines);
 
-    // for printing the premises
-    cout<<"The premises are:"<<endl;
-    for(int i=0;i<noOfPremises;i++){
-        cout<<premises[i]<<endl;
-    }
-
-    cout << modusTollens(proofLines[2], premises, proofLines);
+    
     return 0;
 }
 
