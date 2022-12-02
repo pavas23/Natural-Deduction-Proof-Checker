@@ -408,6 +408,13 @@ bool conjunctionElimination(string proof,string premises[],string proofLines[]){
     return false;
 }
 
+
+/*
+<------------------------------------------------------------------------------------------------------------>
+Implication Elimination
+<------------------------------------------------------------------------------------------------------------>
+*/
+
 bool impliesElimination(string proof,string premises[],string proofLines[]){
 
     int indexOfImplicationSymbol = proof.find('>');
@@ -418,8 +425,6 @@ bool impliesElimination(string proof,string premises[],string proofLines[]){
         for(int i=0;i<indexOfImplicationSymbol-1;i++){
             result += proof[i];
         }
-
-        cout<<"The result is "<<result<<endl;
 
         // now finding the index of line numbers
         int lineNumber1 = proof[indexOfImplicationSymbol+3];
@@ -449,9 +454,6 @@ bool impliesElimination(string proof,string premises[],string proofLines[]){
             rightPart += impliesStatement[i];
         }
 
-        cout<<"The left part is "<<leftPart<<endl;
-        cout<<"The right part is "<<rightPart<<endl;
-
         // now matching the left part of the implies statement with the statement in the given line number 2
         string givenLeftPart = proofLines[lineNumber2-1];
         // now we need to find the part of the givenLeftPart before the slash
@@ -470,6 +472,82 @@ bool impliesElimination(string proof,string premises[],string proofLines[]){
             return false;
         }
         return false;
+    }
+    return false;
+}
+
+/*
+<------------------------------------------------------------------------------------------------------------>
+Modus Tollens
+<------------------------------------------------------------------------------------------------------------>
+*/
+
+bool modusTollens(string proof,string premises[],string proofLines[]){
+
+    // finding the index of MT first
+    int indexOfMT = proof.find("MT"); // will give the index where the substring starts
+
+    if(indexOfMT < proof.length()){
+        // means this rule is MT
+        string result;
+        for(int i=0;i<indexOfMT-1;i++){
+            result += proof[i];
+        }
+
+        // cout<<"The result is "<<result<<endl;
+
+
+        // finding the line number now in which premises for MT are present
+        int lineNumber1 = proof[indexOfMT+3];
+        int lineNumber2 = proof[indexOfMT+5];
+
+        lineNumber1 = int(lineNumber1) - 48;
+        lineNumber2 = int(lineNumber2) - 48;
+
+        string impliesStatement = proofLines[lineNumber1-1];
+        // now we have to find the left and right parts of the implication statement
+
+        int indexOfImpliesInImpliesStatement = impliesStatement.find('>');
+        int indexOfSlashInImpliesStatement = impliesStatement.find('/');
+
+        // leftPart
+        string leftPart;
+        for(int i=1;i<indexOfImpliesInImpliesStatement;i++){
+            leftPart += impliesStatement[i];
+        }
+
+        // right part
+        string rightPart;
+        for(int i=indexOfImpliesInImpliesStatement+1;i<indexOfSlashInImpliesStatement-1;i++){
+            rightPart += impliesStatement[i];
+        }
+
+        // now finding the ~psi given by lineNumber2
+
+        string negationOfRightPart = proofLines[lineNumber2-1];
+        int indexOfSlashInNegationOfRightPart = negationOfRightPart.find('/');
+        string newNegationOfRightPart;
+        for(int i=0;i<indexOfSlashInNegationOfRightPart;i++){
+            newNegationOfRightPart += negationOfRightPart[i];
+        }
+
+        string rightPartAfterNegationInImpliesStatement = "~" + rightPart;
+
+        // cout<<"rightPartAfterNegationInImpliesStatement: "<<rightPartAfterNegationInImpliesStatement<<endl;
+
+        if(newNegationOfRightPart ==rightPartAfterNegationInImpliesStatement){
+            // now we have to check wheter result matches with negation of left part in implies statement
+            string leftPartAfterNegationInImplicationStatement = "~" + leftPart;
+
+            // cout<<"leftPartAfterNegationInImplicationStatement: "<<leftPartAfterNegationInImplicationStatement<<endl;
+
+            if(leftPartAfterNegationInImplicationStatement == result){
+                return true;
+            }
+            return false;
+        }
+        return false;
+
     }
     return false;
 }
@@ -512,7 +590,8 @@ int main(void)
         cout<<premises[i]<<endl;
     }
 
-    cout << impliesElimination(proofLines[2], premises, proofLines);
+    cout << modusTollens(proofLines[2], premises, proofLines);
     return 0;
 }
+
 
