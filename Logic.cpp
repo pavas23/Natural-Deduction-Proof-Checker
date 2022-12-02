@@ -195,6 +195,8 @@ bool conjunctionIntroduction(string proof,string proofLines[])
 {
     int indexOfConjunctionSymbol = proof.find('^');
     int indexOfConjunction = proof.find('i');
+    int indexOfSlashInProof = proof.find('/');
+    indexOfConjunction = indexOfSlashInProof + 2;
     // making strings for left part before the '^' and right part after '^'
     string leftPart;
     string rightPart;
@@ -284,6 +286,8 @@ bool disjunctionIntroduction(string proof,string proofLines[])
 {
     int indexOfDisjunctionSymbol = proof.find('+');
     int indexOfDisjunction = proof.find('i');
+    int indexOfSlashInProof = proof.find('/');
+    indexOfDisjunction = indexOfSlashInProof+2;
     // making strings for left part before the '^' and right part after '^'
     string leftPart;
     string rightPart;
@@ -368,10 +372,11 @@ bool conjunctionElimination(string proof,string proofLines[]){
     int indexOfConjunctionSymbol = proof.find('^');
     // TODO fix when there is e in the formula itself it will crash there
     int indexOfConjunctionElimination = proof.find('e');
+    int indexOfSlashInProof = proof.find('/');
 
     // storing the result in string
     string result;
-
+    indexOfConjunctionSymbol = indexOfSlashInProof+1;
     if(indexOfConjunctionElimination < proof.length()){
         // means this is conjunction elimination rule
         for(int i=0;i<indexOfConjunctionSymbol-1;i++){
@@ -561,6 +566,8 @@ bool modusTollens(string proof,string proofLines[]){
 
     // finding the index of MT first
     int indexOfMT = proof.find("MT"); // will give the index where the substring starts
+    int indexOfSlashInProof = proof.find('/');
+    indexOfMT = indexOfSlashInProof + 1;
 
     if(indexOfMT < proof.length()){
         // means this rule is MT
