@@ -23,6 +23,7 @@ q/>e/2/5
 ~r/P
 ~(p>q)/MT/4/7
 (s^p)/^i/3/5
+(s+r)/+i1/3
 
 <------------------------------------------------------------------------------------------------------------>
 */
@@ -375,16 +376,24 @@ bool disjunctionIntroduction(string proof,string proofLines[])
 
         /* as line1 and line2 are initially characters so typecast to int and subtract 48 which is ascii value of 0 */
         line1 = int(line1) - 48;
-        
+
+        string givenLine = proofLines[line1-1];
+        int indexOfSlashInGivenLine = givenLine.find('/');
+        string givenPart;
+
+        for(int i=0;i<indexOfSlashInGivenLine;i++){
+                givenPart += givenLine[i];
+        } 
+
         // Now both left and right part should be present in premise
         if(typeOfDisjunctionIntroduction == 1){
-            if(leftPart == proofLines[line1-1]){
+            if(leftPart == givenPart){
                 return true;
             }
             return false;
         }
         else if(typeOfDisjunctionIntroduction == 2){
-            if(rightPart == proofLines[line1-1]){
+            if(rightPart == givenPart){
                 return true;
             }
             return false;
