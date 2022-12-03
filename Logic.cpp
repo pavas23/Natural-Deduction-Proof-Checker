@@ -12,18 +12,17 @@ Team Members:
 <------------------------------------------------------------------------------------------------------------>
 Example of Valid Proof
 
-Enter the number of lines in proof rule: 10
+Enter the number of lines in proof rule: 9
 
 (((p>q)>r)^s)/P
 (p>q)/P
 s/P
-((p>q)>r)/^e1/1/2
+((p>q)>r)/^e1/1/3
 p/P
 q/>e/2/5
 ~r/P
 ~(p>q)/MT/4/7
 (s^p)/^i/3/5
-(s^(d>f))/+i1/3
 
 <------------------------------------------------------------------------------------------------------------>
 */
@@ -706,7 +705,7 @@ int main(void)
         int n=0;
         cout << "Enter the number of lines in proof rule: ";
         cin >> n;
-        cout << "Enter the " << n << " lines of proof" << endl;
+        cout << "Enter the " << n << " lines of proof" << endl<<endl;
 
         // taking input from the user
         string proofLines[n];
@@ -818,4 +817,3 @@ int main(void)
     return 0;
 
 }
-
