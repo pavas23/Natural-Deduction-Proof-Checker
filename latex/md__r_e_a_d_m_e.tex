@@ -1,0 +1,18 @@
+2-\/1, CS-\/\+F214, Logic in CS Assignment II. We have to make a framework to check the proof of {\ttfamily natural deduction} in Propositional Logic/ Predicate Logic.\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysubsection{Allowed Proof Rules}\label{md__r_e_a_d_m_e_autotoc_md13}
+
+\begin{DoxyItemize}
+\item Premise
+\item AND introduction/elimination
+\item OR introduction
+\item IMPLIES elimination
+\item MT
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysubsection{Definitions}\label{md__r_e_a_d_m_e_autotoc_md14}
+$<$statement$>$ \+::= p $\vert$ ¬p $\vert$ ¬($<$statement$>$) $\vert$ ($<$statement$>$ ∧ $<$statement$>$) $\vert$ ($<$statement$>$ ∨ $<$statement$>$) $\vert$ ($<$statement$>$ → $<$statement$>$) $<$rule$>$ \+::= ∧i $\vert$ ∧e1 $\vert$ ∧e2 $\vert$ ∨i1 $\vert$ ∨i2 $\vert$ →e $\vert$P\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysubsection{Input}\label{md__r_e_a_d_m_e_autotoc_md15}
+First line\+: n (number of statements) Next n lines\+: $<$statement$>$/\texorpdfstring{$<$}{<} rule \texorpdfstring{$>$}{>}\mbox{[} /line1\mbox{[} /line2 \mbox{]} \mbox{]} (parameter in \mbox{[}\mbox{]} is optional whose existence will be determined by \texorpdfstring{$<$}{<} rule \texorpdfstring{$>$}{>} )\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysubsection{Output}\label{md__r_e_a_d_m_e_autotoc_md16}
+Valid Proof (or) Invalid Proof\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysubsection{Assumptions}\label{md__r_e_a_d_m_e_autotoc_md17}
+
+\begin{DoxyEnumerate}
+\item Line number starts from 1.
+\item $<$statement$>$ should be {\ttfamily perfectly parenthesized}, e.\+g. ((a ∧ b) ∧ c) is valid, (a ∧ b) ∧ c is invalid, ((a ∧ b)) is invalid, (a ∧ b) is valid, (a ∧ b ∧ c) is invalid, p is valid, (p) is invalid.
+\item ¬ can be succeeded by a literal or ‘(‘ only. 
+\end{DoxyEnumerate}

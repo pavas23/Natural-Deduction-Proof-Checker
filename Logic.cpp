@@ -677,6 +677,7 @@ int main(void)
                         if(!conjunctionIntroduction(proofLines[i],proofLines)){
                             cout<<"Invalid Proof!"<<endl;
                             cout<<"Error in line Number "<<i+1<<endl;
+                            cout<<"Wrong conjunctionIntroduction Used!!"<<endl;
                             flag = 1;
                             break;
                         }
@@ -686,6 +687,7 @@ int main(void)
                         if(!conjunctionElimination(proofLines[i],proofLines)){
                             cout<<"Invalid Proof!"<<endl;
                             cout<<"Error in line Number "<<i+1<<endl;
+                            cout<<"Wrong conjunctionElimination Used!!"<<endl;
                             flag = 1;
                             break;
                         }
@@ -693,6 +695,7 @@ int main(void)
                     else{
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
+                        cout<<"Wrong ^ rule Used!!"<<endl;
                         flag = 1;
                         break;
                     }
@@ -702,6 +705,7 @@ int main(void)
                     if(!disjunctionIntroduction(proofLines[i],proofLines)){
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
+                        cout<<"Wrong disjunctionIntroduction Used!!"<<endl;
                         flag = 1;
                         break;
                     }
@@ -711,6 +715,7 @@ int main(void)
                     if(!implicationElimination(proofLines[i],proofLines)){
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
+                        cout<<"Wrong implicationElimination Used!!"<<endl;
                         flag = 1;
                         break;
                     }
@@ -720,6 +725,7 @@ int main(void)
                     if(!modusTollens(proofLines[i],proofLines)){
                         cout<<"Invalid Proof!"<<endl;
                         cout<<"Error in line Number "<<i+1<<endl;
+                        cout<<"Wrong modusTollens Used!!"<<endl;
                         flag = 1;
                         break;
                     }
@@ -740,6 +746,7 @@ int main(void)
     if(flag == 0){
         cout<<"Valid Proof !!"<<endl;
     }
+    cout<<endl;
     cout<<"*************************************************************************"<<endl<<endl;
 
     return 0;
