@@ -1,3 +1,33 @@
+/*
+<------------------------------------------------------------------------------------------------------------>
+Team Members:
+1 Pavas Garg 2021A7PS2587H
+2 Saksham Bajaj 2021A7PS1315H
+3 M Sai Karthik 2021A7PS0097H
+4 Kolasani Amit Vishnu 2021A7PS0151H
+<------------------------------------------------------------------------------------------------------------>
+*/
+
+/*
+<------------------------------------------------------------------------------------------------------------>
+Example of Valid Proof
+
+Enter the number of lines in proof rule: 10
+
+(((p>q)>r)^s)/P
+(p>q)/P
+s/P
+((p>q)>r)/^e1/1/3
+p/P
+q/>e/2/5
+~r/P
+~(p>q)/MT/4/7
+(s^p)/^i/3/5
+(s+r)/+i1/3
+
+<------------------------------------------------------------------------------------------------------------>
+*/
+
 #include <iostream>
 using namespace std;
 
@@ -6,6 +36,7 @@ using namespace std;
 Linked List Implementation
 <------------------------------------------------------------------------------------------------------------>
 */
+
 /// This class is used for creating nodes of the Linked List.
 /// @see LinkedList
 ///
@@ -148,6 +179,7 @@ class LinkedList{
 Stack implementation
 <------------------------------------------------------------------------------------------------------------>
 */
+
 /// > This class is for implementing the Stack data structure using a LinkedList.
 ///
 /// ###push(data)
@@ -195,9 +227,11 @@ bool conjunctionIntroduction(string proof,string proofLines[])
 {
     int indexOfSlashInProof = proof.find('/');
     int indexOfConjunction = indexOfSlashInProof + 2;
+
     // making strings for left part before the '^' and right part after '^'
     string leftPart;
     string rightPart;
+
     // making stack for storing the proof of conjunctionIntroduction
     Stack stack;
     if (indexOfConjunction < proof.length())
@@ -208,9 +242,7 @@ bool conjunctionIntroduction(string proof,string proofLines[])
             stack.push(proof[indexOfConjunction-2-i-1]);
         }
 
-        // now leftPart is before the ^ symbol
-        // This has time complexity as O(n) only as we are iterating once over every element
-        // if k elements are inside ( and ) then we only iterate for remaining n-k elements in else so overall n only
+        /* now leftPart is before the ^ symbol, This has time complexity as O(n) only as we are iterating once over every element if k elements are inside ( and ) then we only iterate for remaining n-k elements in else so overall n only */
 
         while(stack.top() != '^'){
             if(stack.top() == '('){
@@ -249,6 +281,7 @@ bool conjunctionIntroduction(string proof,string proofLines[])
         // now we need to find the index where line numbers are present
         int line1 = proof[indexOfConjunction + 2];
         int line2 = proof[indexOfConjunction + 4];
+
         /* as line1 and line2 are initially characters so typecast to int and subtract 48 which is ascii value of 0 */
         line1 = int(line1) - 48;
         line2 = int(line2) - 48;
@@ -284,9 +317,11 @@ bool disjunctionIntroduction(string proof,string proofLines[])
 {
     int indexOfSlashInProof = proof.find('/');
     int indexOfDisjunction = indexOfSlashInProof+2;
+
     // making strings for left part before the '^' and right part after '^'
     string leftPart;
     string rightPart;
+
     // making stack for storing the proof of conjunctionIntroduction
     Stack stack;
     if (indexOfDisjunction < proof.length())
@@ -296,6 +331,7 @@ bool disjunctionIntroduction(string proof,string proofLines[])
             // push the proof in reverse order in stack
             stack.push(proof[indexOfDisjunction-2-i-1]);
         }
+
         // now leftPart is before the ^ symbol
         while(stack.top() != '+'){
             if(stack.top() == '('){
@@ -337,18 +373,27 @@ bool disjunctionIntroduction(string proof,string proofLines[])
 
         // now we need to find the index where line numbers are present
         int line1 = proof[indexOfDisjunction + 3];
+
         /* as line1 and line2 are initially characters so typecast to int and subtract 48 which is ascii value of 0 */
         line1 = int(line1) - 48;
-        
+
+        string givenLine = proofLines[line1-1];
+        int indexOfSlashInGivenLine = givenLine.find('/');
+        string givenPart;
+
+        for(int i=0;i<indexOfSlashInGivenLine;i++){
+                givenPart += givenLine[i];
+        } 
+
         // Now both left and right part should be present in premise
         if(typeOfDisjunctionIntroduction == 1){
-            if(leftPart == proofLines[line1-1]){
+            if(leftPart == givenPart){
                 return true;
             }
             return false;
         }
         else if(typeOfDisjunctionIntroduction == 2){
-            if(rightPart == proofLines[line1-1]){
+            if(rightPart == givenPart){
                 return true;
             }
             return false;
@@ -366,10 +411,13 @@ Conjunction Elimination
 bool conjunctionElimination(string proof,string proofLines[]){
 
     int indexOfSlashInProof = proof.find('/');
+
     // storing the result in string
     string result;
+
     int indexOfConjunctionSymbol = indexOfSlashInProof+1;
     int indexOfConjunctionElimination = indexOfSlashInProof+2;
+
     if(indexOfConjunctionElimination < proof.length()){
         // means this is conjunction elimination rule
         for(int i=0;i<indexOfConjunctionSymbol-1;i++){
@@ -527,6 +575,7 @@ bool implicationElimination(string proof,string proofLines[]){
 
         // now matching the left part of the implies statement with the statement in the given line number 2
         string givenLeftPart = proofLines[lineNumber2-1];
+
         // now we need to find the part of the givenLeftPart before the slash
         int indexOfSlashInGivenLeftPart = givenLeftPart.find('/');
 
@@ -650,99 +699,132 @@ bool modusTollens(string proof,string proofLines[]){
 
 int main(void)
 {
-    cout<<"*************************************************************************"<<endl<<endl;
-    int n=0;
-    cout << "Enter the number of lines in proof rule: ";
-    cin >> n;
-    cout << "Enter the " << n << " lines of proof" << endl;
+    char ans = 'Y';
+    while(ans == 'Y' || ans == 'y'){
 
-    // taking input from the user
-    string proofLines[n];
-    for (int i = 0; i < n; i++)
-    {
-        // cin >> ws is used for taking in account the white spaces in input stream.
-        getline(cin >> ws, proofLines[i]);
+        cout<<"*************************************************************************"<<endl<<endl;
+
+        cout<<"||=====================================================================||"<<endl;
+        cout<<"||                                                                     ||"<<endl;
+        cout<<"||                   Natural Deduction Proof Checker                   ||"<<endl;
+        cout<<"||                                                                     ||"<<endl;
+        cout<<"||=====================================================================||"<<endl;
+        cout<<endl<<endl;
+
+        int n=0;
+        cout << "Enter the number of lines in proof rule: ";
+        cin >> n;
+        cout << "Enter the " << n << " lines of proof" << endl<<endl;
+
+        // taking input from the user
+        string proofLines[n];
+        for (int i = 0; i < n; i++)
+        {
+            // cin >> ws is used for taking in account the white spaces in input stream.
+            getline(cin >> ws, proofLines[i]);
+        }
+
+        // now ownwards all statements are not premises
+        int index = 0;
+        int flag = 0;
+        for(int i=0;i<n;i++){
+            index = proofLines[i].find('/');
+            if(index < proofLines[i].length()){
+                    if((index+1 < proofLines[i].length()) && (proofLines[i][index+1] == '^')){
+                        // so this is either ^i or ^e
+                        if(proofLines[i][index+2] == 'i'){
+                            // and intro
+                            if(!conjunctionIntroduction(proofLines[i],proofLines)){
+                                cout<<endl;
+                                cout<<"Invalid Proof!"<<endl;
+                                cout<<"Error in line Number "<<i+1<<endl;
+                                cout<<"Wrong conjunctionIntroduction Used!!"<<endl;
+                                flag = 1;
+                                break;
+                            }
+                        }
+                        else if( (index+2 < proofLines[i].length()) && (proofLines[i][index+2] == 'e')){
+                            // and elimination
+                            if(!conjunctionElimination(proofLines[i],proofLines)){
+                                cout<<endl;
+                                cout<<"Invalid Proof!"<<endl;
+                                cout<<"Error in line Number "<<i+1<<endl;
+                                cout<<"Wrong conjunctionElimination Used!!"<<endl;
+                                flag = 1;
+                                break;
+                            }
+                        }
+                        else{
+                            cout<<endl;
+                            cout<<"Invalid Proof!"<<endl;
+                            cout<<"Error in line Number "<<i+1<<endl;
+                            cout<<"Wrong ^ rule Used!!"<<endl;
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    else if( (index+1 < proofLines[i].length()) && (proofLines[i][index+1] == '+')){
+                        // or intro
+                        if(!disjunctionIntroduction(proofLines[i],proofLines)){
+                            cout<<endl;
+                            cout<<"Invalid Proof!"<<endl;
+                            cout<<"Error in line Number "<<i+1<<endl;
+                            cout<<"Wrong disjunctionIntroduction Used!!"<<endl;
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    else if( (index+1 < proofLines[i].length()) && (proofLines[i][index+1] == '>')){
+                        // impl elimination
+                        if(!implicationElimination(proofLines[i],proofLines)){
+                            cout<<endl;
+                            cout<<"Invalid Proof!"<<endl;
+                            cout<<"Error in line Number "<<i+1<<endl;
+                            cout<<"Wrong implicationElimination Used!!"<<endl;
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    else if((index+1 < proofLines[i].length()) && (proofLines[i][index+1] == 'M')){
+                        // MT
+                        if(!modusTollens(proofLines[i],proofLines)){
+                            cout<<endl;
+                            cout<<"Invalid Proof!"<<endl;
+                            cout<<"Error in line Number "<<i+1<<endl;
+                            cout<<"Wrong modusTollens Used!!"<<endl;
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    else if((index+1 < proofLines[i].length()) && (proofLines[i][index+1] == 'P')){
+                        // premise
+                    }
+            }
+            else{
+                    cout<<endl; 
+                    cout<<"Invalid Proof!"<<endl;
+                    cout<<"Error in line Number "<<i+1<<endl;
+                    flag = 1;
+                    break;
+            } 
+        
+        }
+
+        if(flag == 0){
+            cout<<endl;
+            cout<<"Valid Proof !!"<<endl;
+        }
+
+        cout<<endl;
+        cout<<"*************************************************************************"<<endl<<endl;
+
+        cout<<"Do you want to test another proof? (Enter y/Y for yes and any other key to exit) ";
+        cin>>ans;
+
     }
-
-    // now ownwards all statements are not premises
-    int index = 0;
-    int flag = 0;
-    for(int i=0;i<n;i++){
-        index = proofLines[i].find('/');
-        if(index < proofLines[i].length()){
-                if((index+1 < proofLines[i].length()) && (proofLines[i][index+1] == '^')){
-                    // so this is either ^i or ^e
-                    if(proofLines[i][index+2] == 'i'){
-                        // and intro
-                        if(!conjunctionIntroduction(proofLines[i],proofLines)){
-                            cout<<"Invalid Proof!"<<endl;
-                            cout<<"Error in line Number "<<i+1<<endl;
-                            flag = 1;
-                            break;
-                        }
-                    }
-                    else if( (index+2 < proofLines[i].length()) && (proofLines[i][index+2] == 'e')){
-                        // and elimination
-                        if(!conjunctionElimination(proofLines[i],proofLines)){
-                            cout<<"Invalid Proof!"<<endl;
-                            cout<<"Error in line Number "<<i+1<<endl;
-                            flag = 1;
-                            break;
-                        }
-                    }
-                    else{
-                        cout<<"Invalid Proof!"<<endl;
-                        cout<<"Error in line Number "<<i+1<<endl;
-                        flag = 1;
-                        break;
-                    }
-                }
-                else if( (index+1 < proofLines[i].length()) && (proofLines[i][index+1] == '+')){
-                    // or intro
-                    if(!disjunctionIntroduction(proofLines[i],proofLines)){
-                        cout<<"Invalid Proof!"<<endl;
-                        cout<<"Error in line Number "<<i+1<<endl;
-                        flag = 1;
-                        break;
-                    }
-                }
-                else if( (index+1 < proofLines[i].length()) && (proofLines[i][index+1] == '>')){
-                    // impl elimination
-                    if(!implicationElimination(proofLines[i],proofLines)){
-                        cout<<"Invalid Proof!"<<endl;
-                        cout<<"Error in line Number "<<i+1<<endl;
-                        flag = 1;
-                        break;
-                    }
-                }
-                else if((index+1 < proofLines[i].length()) && (proofLines[i][index+1] == 'M')){
-                    // MT
-                    if(!modusTollens(proofLines[i],proofLines)){
-                        cout<<"Invalid Proof!"<<endl;
-                        cout<<"Error in line Number "<<i+1<<endl;
-                        flag = 1;
-                        break;
-                    }
-                }
-                else if((index+1 < proofLines[i].length()) && (proofLines[i][index+1] == 'P')){
-                    // premise
-                }
-        }
-        else{
-                cout<<"Invalid Proof!"<<endl;
-                cout<<"Error in line Number "<<i+1<<endl;
-                flag = 1;
-                break;
-        }
     
-    }
-
-    if(flag == 0){
-        cout<<"Valid Proof !!"<<endl;
-    }
-    cout<<"*************************************************************************"<<endl<<endl;
-
     return 0;
 }
+
 
 

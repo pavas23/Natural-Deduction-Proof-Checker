@@ -32,4 +32,7 @@ Valid Proof (or) Invalid Proof
 b)) is invalid, (a ∧ b) is valid, (a ∧ b ∧ c) is invalid, p is valid, (p) is invalid.
 3. ¬ can be succeeded by a literal or ‘(‘ only.
 
+### Screenshots
+
+<img width="587" alt="Logic3" src="https://user-images.githubusercontent.com/97559428/205480778-e44665ea-8cca-42e9-85a5-fa3e5fa71888.png">
 
