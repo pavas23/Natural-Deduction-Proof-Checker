@@ -12,7 +12,7 @@ Team Members:
 <------------------------------------------------------------------------------------------------------------>
 Example of Valid Proof
 
-Enter the number of lines in proof rule: 9
+Enter the number of lines in proof rule: 10
 
 (((p>q)>r)^s)/P
 (p>q)/P
@@ -824,7 +824,7 @@ int main(void)
     }
     
     return 0;
-
+    
 }
 
 
