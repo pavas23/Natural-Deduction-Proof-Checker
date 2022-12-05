@@ -318,21 +318,21 @@ bool disjunctionIntroduction(string proof,string proofLines[])
     int indexOfSlashInProof = proof.find('/');
     int indexOfDisjunction = indexOfSlashInProof+2;
 
-    // making strings for left part before the '^' and right part after '^'
+    // making strings for left part before the '+' and right part after '+'
     string leftPart;
     string rightPart;
 
-    // making stack for storing the proof of conjunctionIntroduction
+    // making stack for storing the proof of disjunctionIntroduction
     Stack stack;
     if (indexOfDisjunction < proof.length())
     {
-        // means this is and introduction rule
+        // means this is or introduction rule
         for(int i=1;i<indexOfDisjunction-3;i++){
             // push the proof in reverse order in stack
             stack.push(proof[indexOfDisjunction-2-i-1]);
         }
 
-        // now leftPart is before the ^ symbol
+        // now leftPart is before the + symbol
         while(stack.top() != '+'){
             if(stack.top() == '('){
                 while(stack.top() != ')'){
@@ -348,7 +348,7 @@ bool disjunctionIntroduction(string proof,string proofLines[])
             }
         }
 
-        // now poping out the ^ symbol
+        // now poping out the + symbol
         stack.pop();
 
         // now for the right part pop out until stack is not empty
