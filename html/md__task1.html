@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Logical Framework: Class List</title>
+<title>Logical Framework: ConjunctionIntroduction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('annotated.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md__task1.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,21 +94,31 @@ $(document).ready(function(){initNavTree('annotated.html',''); initResizable(); 
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Class List</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">ConjunctionIntroduction </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here are the classes, structs, unions and interfaces with brief descriptions:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_linked_list.html" target="_self">LinkedList</a></td><td class="desc">This class is used to create a <em>Linked List</em> which stores data of <b>char</b> datatype </td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_node.html" target="_self">Node</a></td><td class="desc">This class is used for creating nodes of the Linked List </td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_stack.html" target="_self">Stack</a></td><td class="desc"><blockquote class="doxtable">
-<p >&zwj;This class is for implementing the <a class="el" href="class_stack.html" title="‍This class is for implementing the Stack data structure using a LinkedList.">Stack</a> data structure using a <a class="el" href="class_linked_list.html" title="This class is used to create a Linked List which stores data of char datatype.">LinkedList</a> </p>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md21"></a>
+Algorithm</h1>
+<blockquote class="doxtable">
+<p >&zwj;</p><ul>
+<li>The statements in the proof are taken as inout which are to be verified for Conjunction(AND) Introduction</li>
+<li>Make two different strings for left part occuring before '^' and right part occuring after '^'</li>
+<li>Make stack for storing the proof of conjunctionIntroduction</li>
+<li>Push the proof in reverse order in stack</li>
+<li>The leftPart is before the ^ symbol and is iterated while top element of stack is'nt '^'. If top element of stack is '(' then store them in the leftpart string and pop it out from stack until the top element becomes ')', else just add top element of stack to left string and then pop it from stack.</li>
+<li>After this, we pop out '^' symbol</li>
+<li>And now for the right part, pop out until stack is not empty</li>
+<li>We now need to find the index where line numbers are present</li>
+<li>As line1 and line2 are initially characters so we typecast to int and subtract 48 which is ascii value of 0</li>
+<li>Now both left and right part should be present in premise</li>
+<li>If now the original left and right part to the '^' is equal to the corresponding left and right string obtained then 'true' is returned.<br  />
+<br  />
+ </li>
+</ul>
 </blockquote>
-</td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

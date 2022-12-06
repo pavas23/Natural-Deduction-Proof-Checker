@@ -1,0 +1,18 @@
+\hypertarget{md__task4_autotoc_md28}{}\doxysection{Algorithm}\label{md__task4_autotoc_md28}
+\begin{quote}
+
+\begin{DoxyItemize}
+\item The statements in the proof are taken as inout which are to be verified for Implication Elimination
+\item We initially find the index of slash and index of Implication symbol
+\item We check whether the rule is implies elimination or not by verifying that index of implication symbol is less than length of proof and store elements till index of implication symbol is result string.
+\item Follwing it, We find the Index of Line Numbers
+\item First line number is the implies statement in the above proof lines and second line number corresponds to the phi in the implies statement
+\item Find the left part and right part of the implies statement
+\item Elements are pushed in stack in reverse order
+\item The Part before the \texorpdfstring{$>$}{>} symbol is iterated while top element of stack is\textquotesingle{}nt \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{}. If top element of stack is \textquotesingle{}(\textquotesingle{} then store them in the leftpart string and pop it out from stack until the top element becomes \textquotesingle{})\textquotesingle{}, else just add top element of stack to left string and then pop it from stack.
+\item Now we remove \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{} symbol
+\item And similar to the left part string, we add elements to right part string.
+\item Now match the left part of the implies statement with the statement in the given line number 2
+\item We find the part of the given Left\+Part before the slash and make new\+Given\+Left\+Part string.
+\item If leftpart is same as the new\+Given\+Left\+Part string and If result is same as right part, then true is returned and if any of above both conditions fail, we return false. 
+\end{DoxyItemize}\end{quote}

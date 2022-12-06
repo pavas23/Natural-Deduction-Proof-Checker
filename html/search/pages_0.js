@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['natural_2ddeduction_2dproof_2dchecker_0',['Natural-Deduction-Proof-Checker',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['conjunctionelimination_0',['ConjunctionElimination',['../md__task3.html',1,'']]],
+  ['conjunctionintroduction_1',['ConjunctionIntroduction',['../md__task1.html',1,'']]]
 ];

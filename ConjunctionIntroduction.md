@@ -12,4 +12,8 @@
 > - We now need to find the index where line numbers are present
 > - As line1 and line2 are initially characters so we typecast to int and subtract 48 which is ascii value of 0
 > - Now both left and right part should be present in premise
-> - If now the original left and right part to the '^' is equal to the corresponding left and right string obtained then 'true' is returned.
+> - If now the original left and right part to the '^' is equal to the corresponding left and right string obtained then 'true' is returned.<br><br>
+
+## Time Complexity
+
+## Space Complexity

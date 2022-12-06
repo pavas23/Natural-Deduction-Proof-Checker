@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Logical Framework: Class List</title>
+<title>Logical Framework: ModusTollens</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('annotated.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md__task5.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,21 +94,30 @@ $(document).ready(function(){initNavTree('annotated.html',''); initResizable(); 
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Class List</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">ModusTollens </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here are the classes, structs, unions and interfaces with brief descriptions:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_linked_list.html" target="_self">LinkedList</a></td><td class="desc">This class is used to create a <em>Linked List</em> which stores data of <b>char</b> datatype </td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_node.html" target="_self">Node</a></td><td class="desc">This class is used for creating nodes of the Linked List </td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_stack.html" target="_self">Stack</a></td><td class="desc"><blockquote class="doxtable">
-<p >&zwj;This class is for implementing the <a class="el" href="class_stack.html" title="‍This class is for implementing the Stack data structure using a LinkedList.">Stack</a> data structure using a <a class="el" href="class_linked_list.html" title="This class is used to create a Linked List which stores data of char datatype.">LinkedList</a> </p>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md30"></a>
+Algorithm</h1>
+<blockquote class="doxtable">
+<p >&zwj;</p><ul>
+<li>We start by finding the index of MT</li>
+<li>We check whether the rule is Modus Tollens or not by verifying that index of MT symbol is less than length of proof and store elements till index of MT symbol is result string.</li>
+<li>The find the line number now in which premises for MT are present</li>
+<li>We now find the left and right parts of the implication statement</li>
+<li>Find index of slash in Implies statement and push the elements in stack in reverse order until the index of slash in Implies statement we have found.</li>
+<li>The Part before the &gt; symbol is iterated while top element of stack is'nt '&gt;'. If top element of stack is '(' then store them in the leftpart string and pop it out from stack until the top element becomes ')', else just add top element of stack to left string and then pop it from stack.</li>
+<li>Now we remove '&gt;' symbol</li>
+<li>And similar to the left part string, we add elements to right part string.</li>
+<li>We now find the ~psi give by lineNumber 2</li>
+<li>We store new Negation of Right part in a string which stores the negation of right part we got from lineNumber 2 until the occurence of slash is negation of right part.</li>
+<li>we add '~' to the right part string and to left part string in new respective strings</li>
+<li>If the string having new negation of right part and new negation of left part is exactly same as right part of string with added suffix of '~' and left part of string with added suffix of '~' respectively, then true is returned. If any of abv conditions fail, then false is returned. </li>
+</ul>
 </blockquote>
-</td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

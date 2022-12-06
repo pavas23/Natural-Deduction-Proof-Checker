@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Logical Framework: Class List</title>
+<title>Logical Framework: ConjunctionElimination</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('annotated.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md__task3.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,21 +94,29 @@ $(document).ready(function(){initNavTree('annotated.html',''); initResizable(); 
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Class List</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">ConjunctionElimination </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here are the classes, structs, unions and interfaces with brief descriptions:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_linked_list.html" target="_self">LinkedList</a></td><td class="desc">This class is used to create a <em>Linked List</em> which stores data of <b>char</b> datatype </td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_node.html" target="_self">Node</a></td><td class="desc">This class is used for creating nodes of the Linked List </td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_stack.html" target="_self">Stack</a></td><td class="desc"><blockquote class="doxtable">
-<p >&zwj;This class is for implementing the <a class="el" href="class_stack.html" title="‍This class is for implementing the Stack data structure using a LinkedList.">Stack</a> data structure using a <a class="el" href="class_linked_list.html" title="This class is used to create a Linked List which stores data of char datatype.">LinkedList</a> </p>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md26"></a>
+Algorithm</h1>
+<blockquote class="doxtable">
+<p >&zwj;</p><ul>
+<li>Initially we store the result in a string</li>
+<li>We check whether it has a conjuction elimination rule or not</li>
+<li>We then find whether the elimination is of type 1 or type 2</li>
+<li>Followed by finding the line number and match the result from the proof lines</li>
+<li>Make two different strings for left part occuring before '^' and right part occuring after '^'</li>
+<li>Make object of stack class</li>
+<li>We now push the elements in conjunction line elements until the index of slash(we find index of slash prior to this) to stack</li>
+<li>The Part before the ^ symbol is iterated while top element of stack is'nt '^'. If top element of stack is '(' then store them in the leftpart string and pop it out from stack until the top element becomes ')', else just add top element of stack to left string and then pop it from stack.</li>
+<li>Now we remove '^' symbol</li>
+<li>And similar to the left part string, we add elements to right part string.</li>
+<li>We use coniditional statement and return true if leftpart string is same as result for type 1 Conjunction Elimination else false is returned and return true if right part is equal to result for Conjunction Elimination of type 2 else fasle is returned. </li>
+</ul>
 </blockquote>
-</td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

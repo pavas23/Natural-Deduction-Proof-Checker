@@ -634,7 +634,6 @@ bool implicationElimination(string proof,string proofLines[]){
         int count = 0;
         int stackOriginalSize = stack.size();
         int noOfOpeningBrackets = 0;
-        int flag = 0;
 
         while(stack.top() != '>' || noOfOpeningBrackets != 0){
             if(stack.top() == '(' || noOfOpeningBrackets != 0){

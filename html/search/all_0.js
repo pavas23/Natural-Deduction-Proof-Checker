@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['linkedlist_0',['LinkedList',['../class_linked_list.html',1,'']]]
+  ['conjunctionelimination_0',['ConjunctionElimination',['../md__task3.html',1,'']]],
+  ['conjunctionintroduction_1',['ConjunctionIntroduction',['../md__task1.html',1,'']]]
 ];

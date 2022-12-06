@@ -1,0 +1,16 @@
+\hypertarget{md__task3_autotoc_md26}{}\doxysection{Algorithm}\label{md__task3_autotoc_md26}
+\begin{quote}
+
+\begin{DoxyItemize}
+\item Initially we store the result in a string
+\item We check whether it has a conjuction elimination rule or not
+\item We then find whether the elimination is of type 1 or type 2
+\item Followed by finding the line number and match the result from the proof lines
+\item Make two different strings for left part occuring before \textquotesingle{}$^\wedge$\textquotesingle{} and right part occuring after \textquotesingle{}$^\wedge$\textquotesingle{}
+\item Make object of stack class
+\item We now push the elements in conjunction line elements until the index of slash(we find index of slash prior to this) to stack
+\item The Part before the $^\wedge$ symbol is iterated while top element of stack is\textquotesingle{}nt \textquotesingle{}$^\wedge$\textquotesingle{}. If top element of stack is \textquotesingle{}(\textquotesingle{} then store them in the leftpart string and pop it out from stack until the top element becomes \textquotesingle{})\textquotesingle{}, else just add top element of stack to left string and then pop it from stack.
+\item Now we remove \textquotesingle{}$^\wedge$\textquotesingle{} symbol
+\item And similar to the left part string, we add elements to right part string.
+\item We use coniditional statement and return true if leftpart string is same as result for type 1 Conjunction Elimination else false is returned and return true if right part is equal to result for Conjunction Elimination of type 2 else fasle is returned. 
+\end{DoxyItemize}\end{quote}

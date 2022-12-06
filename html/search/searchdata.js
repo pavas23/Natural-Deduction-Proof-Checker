@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "lns",
+  0: "cdilmns",
   1: "lns",
-  2: "n"
+  2: "cdimn"
 };
 
 var indexSectionNames =
