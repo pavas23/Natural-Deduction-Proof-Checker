@@ -23,7 +23,7 @@ q/>e/2/5
 ~r/P
 ~(p>q)/MT/4/7
 (s^p)/^i/3/5
-(s+r)/+i1/3
+(s+((a>b)^(d>(g+h))))/+i1/3
 
 <------------------------------------------------------------------------------------------------------------>
 */
@@ -244,19 +244,30 @@ bool conjunctionIntroduction(string proof,string proofLines[])
 
         /* now leftPart is before the ^ symbol, This has time complexity as O(n) only as we are iterating once over every element if k elements are inside ( and ) then we only iterate for remaining n-k elements in else so overall n only */
 
+        int count = 0;
+        int stackOriginalSize = stack.size();
+
         while(stack.top() != '^'){
             if(stack.top() == '('){
                 while(stack.top() != ')'){
                     leftPart += stack.top();
+                    count++;
                     stack.pop();
                 }
                 leftPart += stack.top();
+                count++;
                 stack.pop();
             }
             else{
                 leftPart += stack.top();
+                count++;
                 stack.pop();
             }
+            // for checking if and symbol is not found and it is not stuck in infinite loop
+            if(count > stackOriginalSize){
+                return false;
+            }
+
         }
 
         // now poping out the ^ symbol
@@ -264,6 +275,7 @@ bool conjunctionIntroduction(string proof,string proofLines[])
 
         // now for the right part pop out until stack is not empty
          while(stack.size() != 0){
+            
             if(stack.top() == '('){
                 while(stack.top() != ')'){
                     rightPart += stack.top();
@@ -333,18 +345,28 @@ bool disjunctionIntroduction(string proof,string proofLines[])
         }
 
         // now leftPart is before the + symbol
+
+        int count = 0;
+        int stackOriginalSize = stack.size();
+
         while(stack.top() != '+'){
             if(stack.top() == '('){
                 while(stack.top() != ')'){
                     leftPart += stack.top();
+                    count++;
                     stack.pop();
                 }
                 leftPart += stack.top();
+                count++;
                 stack.pop();
             }
             else{
                 leftPart += stack.top();
+                count++;
                 stack.pop();
+            }
+            if(count > stackOriginalSize){
+                return false;
             }
         }
 
@@ -540,18 +562,27 @@ bool implicationElimination(string proof,string proofLines[]){
             stack.push(impliesStatement[indexOfSlash-1-i]);
         }
 
+        int count = 0;
+        int stackOriginalSize = stack.size();
+
         while(stack.top() != '>'){
             if(stack.top() == '('){
                 while(stack.top() != ')'){
                     leftPart += stack.top();
+                    count++;
                     stack.pop();
                 }
                 leftPart += stack.top();
+                count++;
                 stack.pop();
             }
             else{
                 leftPart += stack.top();
+                count++;
                 stack.pop();
+            }
+            if(count > stackOriginalSize){
+                return false;
             }
         }
 
@@ -738,7 +769,7 @@ int main(void)
                                 cout<<endl;
                                 cout<<"Invalid Proof!"<<endl;
                                 cout<<"Error in line Number "<<i+1<<endl;
-                                cout<<"Wrong conjunctionIntroduction Used!!"<<endl;
+                                cout<<"Wrong Conjunction Introduction Used!!"<<endl;
                                 flag = 1;
                                 break;
                             }
@@ -749,7 +780,7 @@ int main(void)
                                 cout<<endl;
                                 cout<<"Invalid Proof!"<<endl;
                                 cout<<"Error in line Number "<<i+1<<endl;
-                                cout<<"Wrong conjunctionElimination Used!!"<<endl;
+                                cout<<"Wrong Conjunction Elimination Used!!"<<endl;
                                 flag = 1;
                                 break;
                             }
@@ -769,7 +800,7 @@ int main(void)
                             cout<<endl;
                             cout<<"Invalid Proof!"<<endl;
                             cout<<"Error in line Number "<<i+1<<endl;
-                            cout<<"Wrong disjunctionIntroduction Used!!"<<endl;
+                            cout<<"Wrong Disjunction Introduction Used!!"<<endl;
                             flag = 1;
                             break;
                         }
@@ -780,7 +811,7 @@ int main(void)
                             cout<<endl;
                             cout<<"Invalid Proof!"<<endl;
                             cout<<"Error in line Number "<<i+1<<endl;
-                            cout<<"Wrong implicationElimination Used!!"<<endl;
+                            cout<<"Wrong Implication Elimination Used!!"<<endl;
                             flag = 1;
                             break;
                         }
@@ -791,7 +822,7 @@ int main(void)
                             cout<<endl;
                             cout<<"Invalid Proof!"<<endl;
                             cout<<"Error in line Number "<<i+1<<endl;
-                            cout<<"Wrong modusTollens Used!!"<<endl;
+                            cout<<"Wrong Modus Tollens Used!!"<<endl;
                             flag = 1;
                             break;
                         }
@@ -825,6 +856,3 @@ int main(void)
     
     return 0;
 }
-
-
-
