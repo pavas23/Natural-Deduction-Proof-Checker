@@ -246,10 +246,15 @@ bool conjunctionIntroduction(string proof,string proofLines[])
 
         int count = 0;
         int stackOriginalSize = stack.size();
+        int noOfOpeningBrackets = 0;
+        int flag = 0;
 
-        while(stack.top() != '^'){
-            if(stack.top() == '('){
+        while(stack.top() != '^' || noOfOpeningBrackets != 0){
+            if(stack.top() == '(' || noOfOpeningBrackets != 0){
                 while(stack.top() != ')'){
+                    if(stack.top() == '('){
+                        noOfOpeningBrackets++;
+                    }
                     leftPart += stack.top();
                     count++;
                     stack.pop();
@@ -257,17 +262,16 @@ bool conjunctionIntroduction(string proof,string proofLines[])
                 leftPart += stack.top();
                 count++;
                 stack.pop();
+                noOfOpeningBrackets--;
             }
             else{
                 leftPart += stack.top();
                 count++;
                 stack.pop();
             }
-            // for checking if and symbol is not found and it is not stuck in infinite loop
             if(count > stackOriginalSize){
                 return false;
             }
-
         }
 
         // now poping out the ^ symbol
@@ -291,12 +295,27 @@ bool conjunctionIntroduction(string proof,string proofLines[])
         }
 
         // now we need to find the index where line numbers are present
-        int line1 = proof[indexOfConjunction + 2];
-        int line2 = proof[indexOfConjunction + 4];
-
+    
         /* as line1 and line2 are initially characters so typecast to int and subtract 48 which is ascii value of 0 */
-        line1 = int(line1) - 48;
-        line2 = int(line2) - 48;
+
+        char slash = proof[indexOfConjunction+1];
+        int x = indexOfConjunction+2;
+        string stringlineNumber1;
+        string stringlineNumber2;
+
+        while(proof[x] != slash){
+            stringlineNumber1 += proof[x];
+            x++;
+        }
+        x++;
+        while(proof[x+1] != ' '){
+            stringlineNumber2 += proof[x];
+            x++;
+        }
+
+        // if double digit line number is present in the proof line
+        int line1 = stoi(stringlineNumber1);
+        int line2 = stoi(stringlineNumber2);
 
         // Now both left and right part should be present in premise
         int indexOfSlash1 = proofLines[line1-1].find('/');
@@ -348,10 +367,15 @@ bool disjunctionIntroduction(string proof,string proofLines[])
 
         int count = 0;
         int stackOriginalSize = stack.size();
+        int noOfOpeningBrackets = 0;
+        int flag = 0;
 
-        while(stack.top() != '+'){
-            if(stack.top() == '('){
+        while(stack.top() != '+' || noOfOpeningBrackets != 0){
+            if(stack.top() == '(' || noOfOpeningBrackets != 0){
                 while(stack.top() != ')'){
+                    if(stack.top() == '('){
+                        noOfOpeningBrackets++;
+                    }
                     leftPart += stack.top();
                     count++;
                     stack.pop();
@@ -359,6 +383,7 @@ bool disjunctionIntroduction(string proof,string proofLines[])
                 leftPart += stack.top();
                 count++;
                 stack.pop();
+                noOfOpeningBrackets--;
             }
             else{
                 leftPart += stack.top();
@@ -389,15 +414,26 @@ bool disjunctionIntroduction(string proof,string proofLines[])
             }
         }
 
+
         // checking wheter it is i1 or i2
         int typeOfDisjunctionIntroduction = proof[indexOfDisjunction+1];
         typeOfDisjunctionIntroduction = int(typeOfDisjunctionIntroduction)-48;
 
         // now we need to find the index where line numbers are present
-        int line1 = proof[indexOfDisjunction + 3];
 
         /* as line1 and line2 are initially characters so typecast to int and subtract 48 which is ascii value of 0 */
-        line1 = int(line1) - 48;
+
+        char slash = proof[indexOfDisjunction+2];
+        int x = indexOfDisjunction+3;
+        string stringlineNumber;
+
+        while(proof[x] != ' '){
+            stringlineNumber += proof[x];
+            x++;
+        }
+
+        // if double digit line number is present in the proof line
+        int line1 = stoi(stringlineNumber);
 
         string givenLine = proofLines[line1-1];
         int indexOfSlashInGivenLine = givenLine.find('/');
@@ -452,8 +488,18 @@ bool conjunctionElimination(string proof,string proofLines[]){
     typeOfConjunctionElimination = int(typeOfConjunctionElimination) - 48;
 
     // finding the line number
-    int lineNumber = proof[indexOfConjunctionElimination+3];
-    lineNumber = int(lineNumber)-48;
+
+    char slash = proof[indexOfConjunctionElimination+2];
+    int x = indexOfConjunctionElimination+3;
+    string stringlineNumber;
+
+    while(proof[x+1] != ' '){
+        stringlineNumber += proof[x];
+        x++;
+    }
+
+    // if double digit line number is present in the proof line
+    int lineNumber = stoi(stringlineNumber);
 
     // matching the result from proofLines
     string conjunctionLine = proofLines[lineNumber-1];
@@ -539,11 +585,26 @@ bool implicationElimination(string proof,string proofLines[]){
         }
 
         // now finding the index of line numbers
-        int lineNumber1 = proof[indexOfImplicationSymbol+3];
-        int lineNumber2 = proof[indexOfImplicationSymbol+5];
 
-        lineNumber1 = int(lineNumber1) - 48;
-        lineNumber2 = int(lineNumber2) - 48;
+        char slash = proof[indexOfImplicationSymbol+2];
+        int x = indexOfImplicationSymbol+3;
+        string stringlineNumber1;
+        string stringlineNumber2;
+
+        while(proof[x] != slash){
+            stringlineNumber1 += proof[x];
+            x++;
+        }
+        x++;
+        while(proof[x+1] != ' '){
+            stringlineNumber2 += proof[x];
+            x++;
+        }
+
+        // if double digit line number is present in the proof line
+
+        int lineNumber1 = stoi(stringlineNumber1);
+        int lineNumber2 = stoi(stringlineNumber2);
 
         // as first line number is the implies statement in the above proof lines
         // and second line number corresponds to the phi in the implies statement
@@ -564,10 +625,15 @@ bool implicationElimination(string proof,string proofLines[]){
 
         int count = 0;
         int stackOriginalSize = stack.size();
+        int noOfOpeningBrackets = 0;
+        int flag = 0;
 
-        while(stack.top() != '>'){
-            if(stack.top() == '('){
+        while(stack.top() != '>' || noOfOpeningBrackets != 0){
+            if(stack.top() == '(' || noOfOpeningBrackets != 0){
                 while(stack.top() != ')'){
+                    if(stack.top() == '('){
+                        noOfOpeningBrackets++;
+                    }
                     leftPart += stack.top();
                     count++;
                     stack.pop();
@@ -575,6 +641,7 @@ bool implicationElimination(string proof,string proofLines[]){
                 leftPart += stack.top();
                 count++;
                 stack.pop();
+                noOfOpeningBrackets--;
             }
             else{
                 leftPart += stack.top();
@@ -585,7 +652,6 @@ bool implicationElimination(string proof,string proofLines[]){
                 return false;
             }
         }
-
         // now removing the > symbol
         stack.pop();
 
@@ -648,11 +714,25 @@ bool modusTollens(string proof,string proofLines[]){
         }
 
         // finding the line number now in which premises for MT are present
-        int lineNumber1 = proof[indexOfMT+3];
-        int lineNumber2 = proof[indexOfMT+5];
+        char slash = proof[indexOfMT+2];
+        int x = indexOfMT+3;
+        string stringlineNumber1;
+        string stringlineNumber2;
 
-        lineNumber1 = int(lineNumber1) - 48;
-        lineNumber2 = int(lineNumber2) - 48;
+        while(proof[x] != slash){
+            stringlineNumber1 += proof[x];
+            x++;
+        }
+        x++;
+        while(proof[x+1] != ' '){
+            stringlineNumber2 += proof[x];
+            x++;
+        }
+
+        // if double digit line number is present in the proof line
+
+        int lineNumber1 = stoi(stringlineNumber1);
+        int lineNumber2 = stoi(stringlineNumber2);
 
         string impliesStatement = proofLines[lineNumber1-1];
 
