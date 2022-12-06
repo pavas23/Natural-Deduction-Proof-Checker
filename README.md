@@ -34,7 +34,8 @@ b)) is invalid, (a ∧ b) is valid, (a ∧ b ∧ c) is invalid, p is valid, (p) 
 
 ### Screenshots
 
-<img width="587" alt="Logic3" src="https://user-images.githubusercontent.com/97559428/205480778-e44665ea-8cca-42e9-85a5-fa3e5fa71888.png">
+<img width="584" alt="Logic1111" src="https://user-images.githubusercontent.com/97559428/205979908-fd1fa78f-0bb8-47c2-86aa-623d601ac990.png">
+
 
 ## Authors
 
