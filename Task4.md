@@ -1,4 +1,4 @@
-## Implication Elimination
+## ImplicationElimination
 
 ## Algorithm
 

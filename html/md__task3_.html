@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Logical Framework: Related Pages</title>
+<title>Logical Framework: ConjunctionElimination</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md__task3_.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,21 +94,29 @@ $(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Related Pages</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">ConjunctionElimination </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all related documentation pages:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__r_e_a_d_m_e.html" target="_self">Natural-Deduction-Proof-Checker</a></td><td class="desc"></td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__task1.html" target="_self">ConjunctionIntroduction</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__task2.html" target="_self">DisjunctionIntroduction</a></td><td class="desc"></td></tr>
-<tr id="row_3_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__task3_.html" target="_self">ConjunctionElimination</a></td><td class="desc"></td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__task4.html" target="_self">ImplicationElimination</a></td><td class="desc"></td></tr>
-<tr id="row_5_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__task5.html" target="_self">ModusTollens</a></td><td class="desc"></td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+<div class="textblock"><h1><a class="anchor" id="autotoc_md29"></a>
+Algorithm</h1>
+<blockquote class="doxtable">
+<p >&zwj;</p><ul>
+<li>Initially we store the result in a string</li>
+<li>We check whether it has a conjuction elimination rule or not</li>
+<li>We then find whether the elimination is of type 1 or type 2</li>
+<li>Followed by finding the line number and match the result from the proof lines</li>
+<li>Make two different strings for left part occuring before '^' and right part occuring after '^'</li>
+<li>Make object of stack class</li>
+<li>We now push the elements in conjunction line elements until the index of slash(we find index of slash prior to this) to stack</li>
+<li>The Part before the ^ symbol is iterated while top element of stack is'nt '^'. If top element of stack is '(' then store them in the leftpart string and pop it out from stack until the top element becomes ')', else just add top element of stack to left string and then pop it from stack.</li>
+<li>Now we remove '^' symbol</li>
+<li>And similar to the left part string, we add elements to right part string.</li>
+<li>We use coniditional statement and return true if leftpart string is same as result for type 1 Conjunction Elimination else false is returned and return true if right part is equal to result for Conjunction Elimination of type 2 else fasle is returned. </li>
+</ul>
+</blockquote>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

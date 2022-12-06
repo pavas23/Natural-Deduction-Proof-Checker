@@ -29,20 +29,23 @@ var NAVTREE =
       [ "Authors", "md__r_e_a_d_m_e.html#autotoc_md19", null ]
     ] ],
     [ "ConjunctionIntroduction", "md__task1.html", [
-      [ "Algorithm", "md__task1.html#autotoc_md21", null ]
+      [ "Algorithm", "md__task1.html#autotoc_md21", null ],
+      [ "Time Complexity", "md__task1.html#autotoc_md22", null ],
+      [ "Space Complexity", "md__task1.html#autotoc_md23", null ]
     ] ],
     [ "DisjunctionIntroduction", "md__task2.html", [
-      [ "Algorithm", "md__task2.html#autotoc_md23", null ],
-      [ "PARGIIII DO FROM HERE, IG THERE ARE SOME ERRORS HERE IN THE COMMENTS U HAVE WRITTEN, KINDLY LOOK AFTER IT", "md__task2.html#autotoc_md24", null ]
+      [ "Algorithm", "md__task2.html#autotoc_md25", null ],
+      [ "Time Complexity", "md__task2.html#autotoc_md26", null ],
+      [ "Space Complexity", "md__task2.html#autotoc_md27", null ]
     ] ],
-    [ "ConjunctionElimination", "md__task3.html", [
-      [ "Algorithm", "md__task3.html#autotoc_md26", null ]
+    [ "ConjunctionElimination", "md__task3_.html", [
+      [ "Algorithm", "md__task3_.html#autotoc_md29", null ]
     ] ],
-    [ "Implication Elimination", "md__task4.html", [
-      [ "Algorithm", "md__task4.html#autotoc_md28", null ]
+    [ "ImplicationElimination", "md__task4.html", [
+      [ "Algorithm", "md__task4.html#autotoc_md31", null ]
     ] ],
     [ "ModusTollens", "md__task5.html", [
-      [ "Algorithm", "md__task5.html#autotoc_md30", null ]
+      [ "Algorithm", "md__task5.html#autotoc_md33", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
