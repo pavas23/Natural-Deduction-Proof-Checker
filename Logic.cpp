@@ -296,7 +296,9 @@ bool conjunctionIntroduction(string proof,string proofLines[])
 
         // now we need to find the index where line numbers are present
     
-        /* as line1 and line2 are initially characters so typecast to int and subtract 48 which is ascii value of 0 */
+        /* as the line number can be two digit also so store them as strings initially then 
+        convert to integer
+        */
 
         char slash = proof[indexOfConjunction+1];
         int x = indexOfConjunction+2;
@@ -421,7 +423,8 @@ bool disjunctionIntroduction(string proof,string proofLines[])
 
         // now we need to find the index where line numbers are present
 
-        /* as line1 and line2 are initially characters so typecast to int and subtract 48 which is ascii value of 0 */
+        /* as the line number can be two digit also so store them as strings initially then 
+        convert to integer */
 
         char slash = proof[indexOfDisjunction+2];
         int x = indexOfDisjunction+3;
@@ -488,6 +491,9 @@ bool conjunctionElimination(string proof,string proofLines[]){
     typeOfConjunctionElimination = int(typeOfConjunctionElimination) - 48;
 
     // finding the line number
+
+    /* as the line number can be two digit also so store them as strings initially then 
+    convert to integer */
 
     char slash = proof[indexOfConjunctionElimination+2];
     int x = indexOfConjunctionElimination+3;
@@ -585,6 +591,8 @@ bool implicationElimination(string proof,string proofLines[]){
         }
 
         // now finding the index of line numbers
+        /* as the line number can be two digit also so store them as strings initially then 
+        convert to integer */
 
         char slash = proof[indexOfImplicationSymbol+2];
         int x = indexOfImplicationSymbol+3;
@@ -730,6 +738,8 @@ bool modusTollens(string proof,string proofLines[]){
         }
 
         // if double digit line number is present in the proof line
+        /* as the line number can be two digit also so store them as strings initially then 
+        convert to integer */
 
         int lineNumber1 = stoi(stringlineNumber1);
         int lineNumber2 = stoi(stringlineNumber2);
