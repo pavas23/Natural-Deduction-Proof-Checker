@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Logical Framework", "index.html", [
+  [ "Natural Deduction Proof Checker", "index.html", [
     [ "Main", "md__main.html", [
       [ "Team Members", "md__main.html#autotoc_md13", [
         [ "Allowed Proof Rules", "md__main.html#autotoc_md14", null ],
@@ -37,33 +37,39 @@ var NAVTREE =
       [ "Screenshot", "md__main.html#autotoc_md20", null ],
       [ "Installation", "md__main.html#autotoc_md21", null ]
     ] ],
+    [ "Profiling and Analysis", "md__profiling_and__analysis.html", [
+      [ "Test Cases", "md__profiling_and__analysis.html#autotoc_md23", null ],
+      [ "Tools Used", "md__profiling_and__analysis.html#autotoc_md28", null ],
+      [ "Commands Used (Ubuntu Terminal)", "md__profiling_and__analysis.html#autotoc_md33", null ],
+      [ "What We Understood From Different Tools", "md__profiling_and__analysis.html#autotoc_md38", null ]
+    ] ],
     [ "Natural-Deduction-Proof-Checker", "md__r_e_a_d_m_e.html", [
-      [ "Authors", "md__r_e_a_d_m_e.html#autotoc_md29", null ]
+      [ "Authors", "md__r_e_a_d_m_e.html#autotoc_md50", null ]
     ] ],
     [ "ConjunctionIntroduction", "md__task1.html", [
-      [ "Algorithm", "md__task1.html#autotoc_md31", null ],
-      [ "Time Complexity", "md__task1.html#autotoc_md32", null ],
-      [ "Space Complexity", "md__task1.html#autotoc_md33", null ]
+      [ "Algorithm", "md__task1.html#autotoc_md52", null ],
+      [ "Time Complexity", "md__task1.html#autotoc_md53", null ],
+      [ "Space Complexity", "md__task1.html#autotoc_md54", null ]
     ] ],
     [ "DisjunctionIntroduction", "md__task2.html", [
-      [ "Algorithm", "md__task2.html#autotoc_md35", null ],
-      [ "Time Complexity", "md__task2.html#autotoc_md36", null ],
-      [ "Space Complexity", "md__task2.html#autotoc_md37", null ]
+      [ "Algorithm", "md__task2.html#autotoc_md56", null ],
+      [ "Time Complexity", "md__task2.html#autotoc_md57", null ],
+      [ "Space Complexity", "md__task2.html#autotoc_md58", null ]
     ] ],
     [ "ConjunctionElimination", "md__task3_.html", [
-      [ "Algorithm", "md__task3_.html#autotoc_md39", null ],
-      [ "Time Complexity", "md__task3_.html#autotoc_md40", null ],
-      [ "Space Complexity", "md__task3_.html#autotoc_md41", null ]
+      [ "Algorithm", "md__task3_.html#autotoc_md60", null ],
+      [ "Time Complexity", "md__task3_.html#autotoc_md61", null ],
+      [ "Space Complexity", "md__task3_.html#autotoc_md62", null ]
     ] ],
     [ "ImplicationElimination", "md__task4.html", [
-      [ "Algorithm", "md__task4.html#autotoc_md43", null ],
-      [ "Time Complexity", "md__task4.html#autotoc_md44", null ],
-      [ "Space Complexity", "md__task4.html#autotoc_md45", null ]
+      [ "Algorithm", "md__task4.html#autotoc_md64", null ],
+      [ "Time Complexity", "md__task4.html#autotoc_md65", null ],
+      [ "Space Complexity", "md__task4.html#autotoc_md66", null ]
     ] ],
     [ "ModusTollens", "md__task5.html", [
-      [ "Algorithm", "md__task5.html#autotoc_md47", null ],
-      [ "Time Complexity", "md__task5.html#autotoc_md48", null ],
-      [ "Space Complexity", "md__task5.html#autotoc_md49", null ]
+      [ "Algorithm", "md__task5.html#autotoc_md68", null ],
+      [ "Time Complexity", "md__task5.html#autotoc_md69", null ],
+      [ "Space Complexity", "md__task5.html#autotoc_md70", null ]
     ] ],
     [ "Future Scope", "md__task6.html", null ],
     [ "Classes", "annotated.html", [

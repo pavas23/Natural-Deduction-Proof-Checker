@@ -1,7 +1,7 @@
 
 ## Natural-Deduction-Proof-Checker
 2-1, CS-F214, Logic in CS Assignment II. We have to make
- a framework to check the
+a framework to check the
 proof of ```natural deduction``` in Propositional Logic/ Predicate Logic.
 
 ### Allowed Proof Rules

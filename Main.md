@@ -44,7 +44,10 @@ b)) is invalid, (a ∧ b) is valid, (a ∧ b ∧ c) is invalid, p is valid, (p) 
 
 ## Screenshot
 
-<img width="584" alt="Logic1111" src="https://user-images.githubusercontent.com/97559428/205979908-fd1fa78f-0bb8-47c2-86aa-623d601ac990.png">
+<img width="584" alt="ss" src="https://user-images.githubusercontent.com/97559428/205979908-fd1fa78f-0bb8-47c2-86aa-623d601ac990.png"><br><br>
+<img width="584" alt="ss" src="/Image/ss1.png"><br><br>
+<img width="584" alt="ss" src="/Image/ss2.png"><br><br>
+
 
 ## Installation
 
