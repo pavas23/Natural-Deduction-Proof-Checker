@@ -310,7 +310,7 @@ bool conjunctionIntroduction(string proof,string proofLines[])
             x++;
         }
         x++;
-        while(proof[x+1] != ' '){
+        while(x<proof.length()){
             stringlineNumber2 += proof[x];
             x++;
         }
@@ -430,7 +430,7 @@ bool disjunctionIntroduction(string proof,string proofLines[])
         int x = indexOfDisjunction+3;
         string stringlineNumber;
 
-        while(proof[x] != ' '){
+        while(x<proof.length()){
             stringlineNumber += proof[x];
             x++;
         }
@@ -499,7 +499,7 @@ bool conjunctionElimination(string proof,string proofLines[]){
     int x = indexOfConjunctionElimination+3;
     string stringlineNumber;
 
-    while(proof[x+1] != ' '){
+    while(x<proof.length()){
         stringlineNumber += proof[x];
         x++;
     }
@@ -604,7 +604,7 @@ bool implicationElimination(string proof,string proofLines[]){
             x++;
         }
         x++;
-        while(proof[x+1] != ' '){
+        while(x<proof.length()){
             stringlineNumber2 += proof[x];
             x++;
         }
@@ -731,7 +731,7 @@ bool modusTollens(string proof,string proofLines[]){
             x++;
         }
         x++;
-        while(proof[x+1] != ' '){
+        while(x<proof.length()){
             stringlineNumber2 += proof[x];
             x++;
         }
