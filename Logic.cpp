@@ -12,18 +12,28 @@ Team Members:
 <------------------------------------------------------------------------------------------------------------>
 Example of Valid Proof
 
-Enter the number of lines in proof rule: 10
+Enter the number of lines in proof rule: 20
 
-(((p>q)>r)^s)/P
-(p>q)/P
-s/P
-((p>q)>r)/^e1/1/3
-p/P
-q/>e/2/5
-~r/P
-~(p>q)/MT/4/7
-(s^p)/^i/3/5
-(s+((a>b)^(d>(g+h))))/+i1/3
+((a>b)^(d+f))/P
+~(a^(s>r))/P
+((a>b)+d)/P
+(a>b)/^e1/1
+(((a>b)+d)+~w)/+i1/3
+((a>b)>~(s+f))/P
+~(s+f)/>e/6/4
+(~(s+f)+~(a>f))/+i1/7
+(d+f)/^e2/1
+((d+f)^~(s+f))/^i/9/7
+~b/P
+~a/MT/4/11
+((a^f)>(g+j))/P
+~(g+j)/P
+~(a^f)/MT/13/14
+(((d+f)>(e^g))+(d+f))/+i2/9
+((a>(b^c))^((h+f)>(d+~z)))/P
+(a>(b^c))/^e1/17
+((h+f)>(d+~z))/^e2/17
+(~b^((h+f)>(d+~z)))/^i/11/19
 
 <------------------------------------------------------------------------------------------------------------>
 */
@@ -759,7 +769,6 @@ bool modusTollens(string proof,string proofLines[]){
         while(stack.top() != '>'){
             if(stack.top() == '('){
                 while(stack.top() != ')'){
-                    // cout<<"hello"<<endl;
                     leftPart += stack.top();
                     stack.pop();
                 }
