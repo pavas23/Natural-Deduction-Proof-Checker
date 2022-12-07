@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['modustollens_0',['ModusTollens',['../md__task5.html',1,'']]]
+  ['implicationelimination_0',['ImplicationElimination',['../md__task4.html',1,'']]]
 ];

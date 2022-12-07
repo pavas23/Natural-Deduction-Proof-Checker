@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linkedlist_0',['LinkedList',['../class_linked_list.html',1,'']]]
+  ['implicationelimination_0',['ImplicationElimination',['../md__task4.html',1,'']]]
 ];

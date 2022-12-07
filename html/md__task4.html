@@ -98,24 +98,38 @@ $(document).ready(function(){initNavTree('md__task4.html',''); initResizable(); 
   <div class="headertitle"><div class="title">ImplicationElimination </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md31"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md33"></a>
 Algorithm</h1>
 <blockquote class="doxtable">
 <p >&zwj;</p><ul>
-<li>The statements in the proof are taken as inout which are to be verified for Implication Elimination</li>
+<li>The statements in the proof are taken as input which are to be verified for Implication Elimination</li>
 <li>We initially find the index of slash and index of Implication symbol</li>
-<li>We check whether the rule is implies elimination or not by verifying that index of implication symbol is less than length of proof and store elements till index of implication symbol is result string.</li>
-<li>Follwing it, We find the Index of Line Numbers</li>
-<li>First line number is the implies statement in the above proof lines and second line number corresponds to the phi in the implies statement</li>
-<li>Find the left part and right part of the implies statement</li>
-<li>Elements are pushed in stack in reverse order</li>
-<li>The Part before the &gt; symbol is iterated while top element of stack is'nt '&gt;'. If top element of stack is '(' then store them in the leftpart string and pop it out from stack until the top element becomes ')', else just add top element of stack to left string and then pop it from stack.</li>
+<li>We check whether the rule is implies elimination or not by verifying that index of implication symbol is less than length of proof and store elements in a string named <code>result</code> until slash is reached.</li>
+<li>Follwing it, We find Line Numbers.</li>
+<li>First line number is the implies statement in the above proof lines and second line number corresponds to the left Part in the implies statement.</li>
+<li>As the line numbers can be more than single digit also, so we store the first line number in a string named <code>stringlineNumber1</code> and other line number in a string named <code>stringlineNumber2</code>, as they both are in string data type we convert them to integer using <code>stoi</code> function.</li>
+<li>Find the left part and right part of the implies statement.</li>
+<li>Elements are pushed in stack in reverse order.</li>
+<li>The Part before the &gt; symbol is iterated while top element of stack is not '&gt;'. If top element of stack is '(' then store them in the leftpart string and pop it out from stack until the top element becomes ')', else just add top element of stack to left string and then pop it from stack.</li>
+<li>We also need to check for multiple brackets if left part contains multiple brackets and has '&gt;' symbol before the actual '&gt;' so we count the number of opening brackets.</li>
 <li>Now we remove '&gt;' symbol</li>
-<li>And similar to the left part string, we add elements to right part string.</li>
-<li>Now match the left part of the implies statement with the statement in the given line number 2</li>
-<li>We find the part of the given LeftPart before the slash and make newGivenLeftPart string.</li>
-<li>If leftpart is same as the newGivenLeftPart string and If result is same as right part, then true is returned and if any of above both conditions fail, we return false. </li>
+<li>And similar to the left part string, we add elements to right part string until stack is empty.</li>
+<li>Now match the left part of the implies statement with the statement given by <code>stringlineNumber2</code>.</li>
+<li>We find the part of the givenLeftPart before the slash and make newGivenLeftPart string.</li>
+<li>If leftpart obtained from implies statement is same as the newGivenLeftPart string and If result is same as right part, then true is returned and if any of above conditions fail, we return false. <br  />
+<br  />
+ </li>
 </ul>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md34"></a>
+Time Complexity</h1>
+<blockquote class="doxtable">
+<p >&zwj;In this algorithm we are traversing once over all the elements present in the string so time complexity will be <code>O(n)</code>. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md35"></a>
+Space Complexity</h1>
+<blockquote class="doxtable">
+<p >&zwj;As we are making stack of size n so space complexity will be <code>O(n)</code>. </p>
 </blockquote>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

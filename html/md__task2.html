@@ -107,13 +107,14 @@ Algorithm</h1>
 <li>Make stack for storing the proof of disjunctionIntroduction rule.</li>
 <li>Push the proof line in reverse order in stack</li>
 <li>The leftPart is before the '+' symbol and is iterated while top element of stack is not '+'. If top element of stack is '(' then store them in the <code>leftpart</code> string and pop it out from stack until the top element becomes ')', else just add top element of stack to left string and then pop it from stack.</li>
+<li>We also need to check for multiple brackets if left part contains multiple brackets and has '+' symbol before the actual '+' so we count the number of opening brackets.</li>
 <li>After this, we pop out '+' symbol</li>
 <li>And now for the right part string, pop out until stack is not empty</li>
-<li>We now check whether its i1 or i2 i.e 'OR' introduction 1 or 'OR' introduction 2.</li>
+<li>We now check whether it is i1 or i2 i.e 'OR' introduction 1 or 'OR' introduction 2.</li>
 <li>We now find the index where line number is present</li>
 <li>As the line number can contain more than one digit so we store it in a string named <code>stringlineNumber</code> and convert it to integer using <code>stoi</code> function.</li>
 <li>Now if the type of disjunction introduction is 1 then left part should match with the proof line corresponding to the line number entered, else if it is type 2 then right part should match with the proof line corresponding to the line entered in the proof statement.</li>
-<li>If the above thing matches the function return true otherwise it will return boolean false. <br  />
+<li>If the above thing matches then function returns true otherwise it will return boolean false. <br  />
 <br  />
  </li>
 </ul>
@@ -126,7 +127,7 @@ Time Complexity</h1>
 <h1><a class="anchor" id="autotoc_md27"></a>
 Space Complexity</h1>
 <blockquote class="doxtable">
-<p >&zwj;As we are making stack of size n so space complexity will be <code>O(n)</code> </p>
+<p >&zwj;As we are making stack of size n so space complexity will be <code>O(n)</code>. </p>
 </blockquote>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

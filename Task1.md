@@ -11,7 +11,7 @@
 > - After this, we pop out '^' symbol
 > - And now for the right part,store the remaining elements of stack in rightPart string and pop out until stack is not empty
 > - We now need to find the index where line numbers are present
-> - As the line numbers can be more than single digit also, so we store the first line number in a string named ```stringlineNumber1``` and other line number in a string named ```stringlineNumber2```, as they both are in string datatype we convert them to integer using ```stoi``` function.
+> - As the line numbers can be more than single digit also, so we store the first line number in a string named ```stringlineNumber1``` and other line number in a string named ```stringlineNumber2```, as they both are in string data type we convert them to integer using ```stoi``` function.
 > - Now both left and right part should be present in one of the proofLines array.
 > - If now the original left and right part is equal to the corresponding left and right string obtained then boolean true is returned, otherwise false <br><br>
 > 

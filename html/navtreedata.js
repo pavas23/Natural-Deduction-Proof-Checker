@@ -39,14 +39,21 @@ var NAVTREE =
       [ "Space Complexity", "md__task2.html#autotoc_md27", null ]
     ] ],
     [ "ConjunctionElimination", "md__task3_.html", [
-      [ "Algorithm", "md__task3_.html#autotoc_md29", null ]
+      [ "Algorithm", "md__task3_.html#autotoc_md29", null ],
+      [ "Time Complexity", "md__task3_.html#autotoc_md30", null ],
+      [ "Space Complexity", "md__task3_.html#autotoc_md31", null ]
     ] ],
     [ "ImplicationElimination", "md__task4.html", [
-      [ "Algorithm", "md__task4.html#autotoc_md31", null ]
+      [ "Algorithm", "md__task4.html#autotoc_md33", null ],
+      [ "Time Complexity", "md__task4.html#autotoc_md34", null ],
+      [ "Space Complexity", "md__task4.html#autotoc_md35", null ]
     ] ],
     [ "ModusTollens", "md__task5.html", [
-      [ "Algorithm", "md__task5.html#autotoc_md33", null ]
+      [ "Algorithm", "md__task5.html#autotoc_md37", null ],
+      [ "Time Complexity", "md__task5.html#autotoc_md38", null ],
+      [ "Space Complexity", "md__task5.html#autotoc_md39", null ]
     ] ],
+    [ "Future Plans", "md__task6.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ]

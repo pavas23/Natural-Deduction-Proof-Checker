@@ -1,0 +1,26 @@
+\hypertarget{md__task2_autotoc_md25}{}\doxysection{Algorithm}\label{md__task2_autotoc_md25}
+\begin{quote}
+
+\begin{DoxyItemize}
+\item The statements in the proof are taken as input which are to be verified for Disjunction(\+OR) Introduction
+\item Make two different strings for left part occuring before \textquotesingle{}+\textquotesingle{} and right part occuring after \textquotesingle{}+\textquotesingle{}
+\item Make stack for storing the proof of disjunction\+Introduction rule.
+\item Push the proof line in reverse order in stack
+\item The left\+Part is before the \textquotesingle{}+\textquotesingle{} symbol and is iterated while top element of stack is not \textquotesingle{}+\textquotesingle{}. If top element of stack is \textquotesingle{}(\textquotesingle{} then store them in the {\ttfamily leftpart} string and pop it out from stack until the top element becomes \textquotesingle{})\textquotesingle{}, else just add top element of stack to left string and then pop it from stack.
+\item We also need to check for multiple brackets if left part contains multiple brackets and has \textquotesingle{}+\textquotesingle{} symbol before the actual \textquotesingle{}+\textquotesingle{} so we count the number of opening brackets.
+\item After this, we pop out \textquotesingle{}+\textquotesingle{} symbol
+\item And now for the right part string, pop out until stack is not empty
+\item We now check whether it is i1 or i2 i.\+e \textquotesingle{}OR\textquotesingle{} introduction 1 or \textquotesingle{}OR\textquotesingle{} introduction 2.
+\item We now find the index where line number is present
+\item As the line number can contain more than one digit so we store it in a string named {\ttfamily stringline\+Number} and convert it to integer using {\ttfamily stoi} function.
+\item Now if the type of disjunction introduction is 1 then left part should match with the proof line corresponding to the line number entered, else if it is type 2 then right part should match with the proof line corresponding to the line entered in the proof statement.
+\item If the above thing matches then function returns true otherwise it will return boolean false. ~\newline
+~\newline
+ 
+\end{DoxyItemize}\end{quote}
+\hypertarget{md__task2_autotoc_md26}{}\doxysection{Time Complexity}\label{md__task2_autotoc_md26}
+\begin{quote}
+In this algorithm we are traversing once over all the elements present in the string so time complexity will be {\ttfamily O(n)}. \end{quote}
+\hypertarget{md__task2_autotoc_md27}{}\doxysection{Space Complexity}\label{md__task2_autotoc_md27}
+\begin{quote}
+As we are making stack of size n so space complexity will be {\ttfamily O(n)}. \end{quote}

@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "cdilmns",
+  0: "cdfilmns",
   1: "lns",
-  2: "cdimn"
+  2: "cdfimn"
 };
 
 var indexSectionNames =

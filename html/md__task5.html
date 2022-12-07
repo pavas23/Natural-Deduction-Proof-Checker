@@ -98,23 +98,36 @@ $(document).ready(function(){initNavTree('md__task5.html',''); initResizable(); 
   <div class="headertitle"><div class="title">ModusTollens </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md33"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md37"></a>
 Algorithm</h1>
 <blockquote class="doxtable">
 <p >&zwj;</p><ul>
-<li>We start by finding the index of MT</li>
-<li>We check whether the rule is Modus Tollens or not by verifying that index of MT symbol is less than length of proof and store elements till index of MT symbol is result string.</li>
-<li>The find the line number now in which premises for MT are present</li>
-<li>We now find the left and right parts of the implication statement</li>
-<li>Find index of slash in Implies statement and push the elements in stack in reverse order until the index of slash in Implies statement we have found.</li>
-<li>The Part before the &gt; symbol is iterated while top element of stack is'nt '&gt;'. If top element of stack is '(' then store them in the leftpart string and pop it out from stack until the top element becomes ')', else just add top element of stack to left string and then pop it from stack.</li>
+<li>We start by finding the index of MT.</li>
+<li>We check whether the rule is Modus Tollens or not by verifying that index of MT symbol is less than length of proof and store elements till index of MT symbol is reached in a string named <code>result</code>.</li>
+<li>Then find the line number now in which premises for MT are present.</li>
+<li>We now find the left and right parts of the implication statement.</li>
+<li>Find index of slash in Implies statement and push the elements in stack in reverse order until the index of slash in Implies statement is found.</li>
+<li>The Part before the '&gt;' symbol is iterated while top element of stack is not '&gt;'. If top element of stack is '(' then store them in the leftpart string and pop it out from stack until the top element becomes ')', else just add top element of stack to left string and then pop it from stack.</li>
+<li>We also need to check for multiple brackets if left part contains multiple brackets and has '+' symbol before the actual '+' so we count the number of opening brackets.</li>
 <li>Now we remove '&gt;' symbol</li>
-<li>And similar to the left part string, we add elements to right part string.</li>
-<li>We now find the ~psi give by lineNumber 2</li>
-<li>We store new Negation of Right part in a string which stores the negation of right part we got from lineNumber 2 until the occurence of slash is negation of right part.</li>
-<li>we add '~' to the right part string and to left part string in new respective strings</li>
-<li>If the string having new negation of right part and new negation of left part is exactly same as right part of string with added suffix of '~' and left part of string with added suffix of '~' respectively, then true is returned. If any of abv conditions fail, then false is returned. </li>
+<li>And similar to the left part string, we add elements to right part string until stack is empty.</li>
+<li>We now find the <code>~Ψ</code> give by lineNumber2 as implies statement is of the form <code>Φ&gt;Ψ</code>.</li>
+<li>We store new Negation of Right part in a string which stores the negation of right part we got from lineNumber 2 until the occurence of slash in negation of right part.</li>
+<li>we add <code>'~'</code> to the right part string.</li>
+<li>Now if right Part string after adding <code>~</code> symbol is same as the string corresponding to <code>lineNumber2</code> means premises are present then we add <code>~</code> to leftPart and check whether it is equal to result given in proof string. <br  />
+<br  />
+ </li>
 </ul>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md38"></a>
+Time Complexity</h1>
+<blockquote class="doxtable">
+<p >&zwj;In this algorithm we are traversing once over all the elements present in the string so time complexity will be <code>O(n)</code>. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md39"></a>
+Space Complexity</h1>
+<blockquote class="doxtable">
+<p >&zwj;As we are making stack of size n so space complexity will be <code>O(n)</code>. </p>
 </blockquote>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

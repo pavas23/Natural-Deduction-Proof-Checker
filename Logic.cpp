@@ -533,20 +533,36 @@ bool conjunctionElimination(string proof,string proofLines[]){
         stack.push(conjunctionLine[indexOfSlash-1-i]);
     }
 
-    while(stack.top() != '^'){
-        if(stack.top() == '('){
+    int count = 0;
+    int stackOriginalSize = stack.size();
+    int noOfOpeningBrackets = 0;
+    int flag = 0;
+
+    while(stack.top() != '^' || noOfOpeningBrackets != 0){
+        if(stack.top() == '(' || noOfOpeningBrackets != 0){
             while(stack.top() != ')'){
+                if(stack.top() == '('){
+                    noOfOpeningBrackets++;
+                }
                 leftPart += stack.top();
+                count++;
                 stack.pop();
             }
             leftPart += stack.top();
+            count++;
             stack.pop();
+            noOfOpeningBrackets--;
         }
         else{
             leftPart += stack.top();
+            count++;
             stack.pop();
         }
+        if(count > stackOriginalSize){
+            return false;
+        }
     }
+
 
     // now removing the ^ symbol
     stack.pop();
@@ -766,20 +782,36 @@ bool modusTollens(string proof,string proofLines[]){
             stack.push(impliesStatement[indexOfSlashInImpliesStatement-1-i]);
         }
 
-        while(stack.top() != '>'){
-            if(stack.top() == '('){
+        int count = 0;
+        int stackOriginalSize = stack.size();
+        int noOfOpeningBrackets = 0;
+        int flag = 0;
+
+        while(stack.top() != '>' || noOfOpeningBrackets != 0){
+            if(stack.top() == '(' || noOfOpeningBrackets != 0){
                 while(stack.top() != ')'){
+                    if(stack.top() == '('){
+                        noOfOpeningBrackets++;
+                    }
                     leftPart += stack.top();
+                    count++;
                     stack.pop();
                 }
                 leftPart += stack.top();
+                count++;
                 stack.pop();
+                noOfOpeningBrackets--;
             }
             else{
                 leftPart += stack.top();
+                count++;
                 stack.pop();
             }
+            if(count > stackOriginalSize){
+                return false;
+            }
         }
+
 
         // now removing the > symbol
         stack.pop();

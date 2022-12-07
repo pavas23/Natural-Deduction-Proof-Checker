@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['modustollens_0',['ModusTollens',['../md__task5.html',1,'']]]
+  ['linkedlist_0',['LinkedList',['../class_linked_list.html',1,'']]]
 ];
