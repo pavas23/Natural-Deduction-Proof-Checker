@@ -1,0 +1,49 @@
+\begin{quote}
+We have to make a framework to check the proof of {\ttfamily natural deduction} in Propositional Logic/ Predicate Logic. \end{quote}
+\hypertarget{md__main_autotoc_md13}{}\doxysection{Team Members}\label{md__main_autotoc_md13}
+\begin{quote}
+
+\begin{DoxyItemize}
+\item Pavas Garg 2021A7\+PS2587H
+\item Saksham Bajaj 2021A7\+PS1315H
+\item M Sai Karthik 2021A7\+PS0097H
+\item Kolasani Amit Vishnu 2021A7\+PS0151H ~\newline
+~\newline
+ 
+\end{DoxyItemize}\end{quote}
+\hypertarget{md__main_autotoc_md14}{}\doxysubsection{Allowed Proof Rules}\label{md__main_autotoc_md14}
+
+\begin{DoxyItemize}
+\item Premise
+\item AND introduction/elimination
+\item OR introduction
+\item IMPLIES elimination
+\item MT
+\end{DoxyItemize}\hypertarget{md__main_autotoc_md15}{}\doxysubsection{Definitions}\label{md__main_autotoc_md15}
+$<$statement$>$ \+::= p $\vert$ ¬p $\vert$ ¬($<$statement$>$) $\vert$ ($<$statement$>$ ∧ $<$statement$>$) $\vert$ ($<$statement$>$ ∨ $<$statement$>$) $\vert$ ($<$statement$>$ → $<$statement$>$) $<$rule$>$ \+::= ∧i $\vert$ ∧e1 $\vert$ ∧e2 $\vert$ ∨i1 $\vert$ ∨i2 $\vert$ →e $\vert$P\hypertarget{md__main_autotoc_md16}{}\doxysubsection{Input}\label{md__main_autotoc_md16}
+First line\+: n (number of statements) Next n lines\+: $<$statement$>$/\texorpdfstring{$<$}{<} rule \texorpdfstring{$>$}{>}\mbox{[} /line1\mbox{[} /line2 \mbox{]} \mbox{]} (parameter in \mbox{[}\mbox{]} is optional whose existence will be determined by \texorpdfstring{$<$}{<} rule \texorpdfstring{$>$}{>} )\hypertarget{md__main_autotoc_md17}{}\doxysubsection{Output}\label{md__main_autotoc_md17}
+Valid Proof (or) Invalid Proof\hypertarget{md__main_autotoc_md18}{}\doxysubsection{Assumptions}\label{md__main_autotoc_md18}
+
+\begin{DoxyEnumerate}
+\item Line number starts from 1.
+\item $<$statement$>$ should be {\ttfamily perfectly parenthesized}, e.\+g. ((a ∧ b) ∧ c) is valid, (a ∧ b) ∧ c is invalid, ((a ∧ b)) is invalid, (a ∧ b) is valid, (a ∧ b ∧ c) is invalid, p is valid, (p) is invalid.
+\item ¬ can be succeeded by a literal or ‘(‘ only.
+\end{DoxyEnumerate}\hypertarget{md__main_autotoc_md19}{}\doxysection{Tech Stack}\label{md__main_autotoc_md19}
+\begin{quote}
+
+\begin{DoxyItemize}
+\item C++
+\item Doxygen ~\newline
+~\newline
+ 
+\end{DoxyItemize}\end{quote}
+\hypertarget{md__main_autotoc_md20}{}\doxysection{Screenshot}\label{md__main_autotoc_md20}
+\hypertarget{md__main_autotoc_md21}{}\doxysection{Installation}\label{md__main_autotoc_md21}
+\begin{quote}
+
+\begin{DoxyItemize}
+\item navigate to html folder
+\item open index.\+html ~\newline
+~\newline
+ 
+\end{DoxyItemize}\end{quote}

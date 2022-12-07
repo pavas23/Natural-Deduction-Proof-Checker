@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Logical Framework: Related Pages</title>
+<title>Logical Framework: Main</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md__main.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,23 +94,75 @@ $(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Related Pages</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Main </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all related documentation pages:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__main.html" target="_self">Main</a></td><td class="desc"></td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__r_e_a_d_m_e.html" target="_self">Natural-Deduction-Proof-Checker</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__task1.html" target="_self">ConjunctionIntroduction</a></td><td class="desc"></td></tr>
-<tr id="row_3_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__task2.html" target="_self">DisjunctionIntroduction</a></td><td class="desc"></td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__task3_.html" target="_self">ConjunctionElimination</a></td><td class="desc"></td></tr>
-<tr id="row_5_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__task4.html" target="_self">ImplicationElimination</a></td><td class="desc"></td></tr>
-<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__task5.html" target="_self">ModusTollens</a></td><td class="desc"></td></tr>
-<tr id="row_7_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__task6.html" target="_self">Future Scope</a></td><td class="desc"></td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+<div class="textblock"><blockquote class="doxtable">
+<p >&zwj;We have to make a framework to check the proof of <code>natural deduction</code> in Propositional Logic/ Predicate Logic. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Team Members</h1>
+<blockquote class="doxtable">
+<p >&zwj;</p><ul>
+<li>Pavas Garg 2021A7PS2587H</li>
+<li>Saksham Bajaj 2021A7PS1315H</li>
+<li>M Sai Karthik 2021A7PS0097H</li>
+<li>Kolasani Amit Vishnu 2021A7PS0151H <br  />
+<br  />
+ </li>
+</ul>
+</blockquote>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Allowed Proof Rules</h2>
+<ul>
+<li>Premise</li>
+<li>AND introduction/elimination</li>
+<li>OR introduction</li>
+<li>IMPLIES elimination</li>
+<li>MT</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Definitions</h2>
+<p >&lt;statement&gt; ::= p | ¬p | ¬(&lt;statement&gt;) | (&lt;statement&gt; ∧ &lt;statement&gt;) | (&lt;statement&gt; ∨ &lt;statement&gt;) | (&lt;statement&gt; → &lt;statement&gt;) &lt;rule&gt; ::= ∧i | ∧e1 | ∧e2 | ∨i1 | ∨i2 | →e |P</p>
+<h2><a class="anchor" id="autotoc_md16"></a>
+Input</h2>
+<p >First line: n (number of statements) Next n lines: &lt;statement&gt;/&lt; rule &gt;[ /line1[ /line2 ] ] (parameter in [] is optional whose existence will be determined by &lt; rule &gt; )</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Output</h2>
+<p >Valid Proof (or) Invalid Proof</p>
+<h2><a class="anchor" id="autotoc_md18"></a>
+Assumptions</h2>
+<ol type="1">
+<li>Line number starts from 1.</li>
+<li>&lt;statement&gt; should be <code>perfectly parenthesized</code>, e.g. ((a ∧ b) ∧ c) is valid, (a ∧ b) ∧ c is invalid, ((a ∧ b)) is invalid, (a ∧ b) is valid, (a ∧ b ∧ c) is invalid, p is valid, (p) is invalid.</li>
+<li>¬ can be succeeded by a literal or ‘(‘ only.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md19"></a>
+Tech Stack</h1>
+<blockquote class="doxtable">
+<p >&zwj;</p><ul>
+<li>C++</li>
+<li>Doxygen <br  />
+<br  />
+ </li>
+</ul>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md20"></a>
+Screenshot</h1>
+<p ><img src="https://user-images.githubusercontent.com/97559428/205979908-fd1fa78f-0bb8-47c2-86aa-623d601ac990.png" alt="Logic1111" width="584" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md21"></a>
+Installation</h1>
+<blockquote class="doxtable">
+<p >&zwj;</p><ul>
+<li>navigate to html folder</li>
+<li>open index.html <br  />
+<br  />
+ </li>
+</ul>
+</blockquote>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

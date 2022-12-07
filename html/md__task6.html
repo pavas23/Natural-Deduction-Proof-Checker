@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Logical Framework: Future Plans</title>
+<title>Logical Framework: Future Scope</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,35 +95,32 @@ $(document).ready(function(){initNavTree('md__task6.html',''); initResizable(); 
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Future Plans </div></div>
+  <div class="headertitle"><div class="title">Future Scope </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><blockquote class="doxtable">
-<p >&zwj;#### Throughout the course of this assignment, we were only required to perform the operations:</p>
-<ul>
+<p >&zwj;Throughout the course of this assignment, we were only required to perform the operations:</p><ul>
 <li>1) Premise Rule</li>
 <li>2) Conjunction Introduction and Elimination</li>
 <li>3) Disjunction Introduction</li>
 <li>4) Implication Elimination</li>
-<li>5) Modus Tollens</li>
-</ul>
-<p ></p>
-</blockquote>
-<p><br  />
+<li>5) Modus Tollens <br  />
 <br  />
-</p>
+ </li>
+</ul>
+</blockquote>
 <blockquote class="doxtable">
-<p >&zwj;- These rules form the base for verification and validation of natural deduction proofs, as they are used in almost every proof. However, these are not the only rules which are used. More commonly used rules include Contradictions, Or Eliminations, Assumptions and Implies Introduction.</p><ul>
+<p >&zwj;</p><ul>
+<li>These rules form the base for verification and validation of natural deduction proofs, as they are used in almost every proof. However, these are not the only rules which are used. More commonly used rules include Contradictions, Or Eliminations, Assumptions and Implies Introduction.</li>
 <li>The main issue is to tackle the scope of certain assumptions.</li>
 <li>We are working under the assumption that a rule that starts with an “assumption” for example the implies introduction rule is used as soon as the scope or the “box” of that rule ends. Hence if an implies introduction box is from lines 5 to 10, we assume its being used in line 11. Hence, when we encounter this rule, we will check the aforementioned box for the validity of the box in its entirety, i.e. whether it follows the definition of the implies introduction rule.</li>
 <li>As soon as we encounter such a rule, another condition comes into play that lines proved inside the “box” cannot be used outside the box. Hence once we determine what the scope of the box is we invalidate any proof that uses the lines within that scope outside the same.</li>
 <li>The rules used within a scope of the box will be checked in a line by line basis in a normal fashion where any assumption will in essence behave as a premise. Nested assumptions will give rise to mini scopes under a larger scope which will be dealt with in the same way mentioned.</li>
-<li>Coming onto the double negation rule, we would take the reference line and check whether the given string is the double negation of the referenced string </li>
-</ul>
-</blockquote>
-<p>A contradiction is one of the most useful proof techniques. A rule of not elimination gives rise to a contradiction which we can check in a normal fashion by using the inputted reference lines and checking if they are the negations of each other. This same contradiction can be used in the following line for Rule of Bottom Elimination, i.e. can lead to any statement and can be verified. </p><blockquote class="doxtable">
-<p >&zwj;- Using tautologies (Law of excluded middle) is a useful addition in proof rules and can be verified by truth value assignment to the statement and verifying whether the used statement is in-fact a tautology.</p><ul>
+<li>Coming onto the double negation rule, we would take the reference line and check whether the given string is the double negation of the referenced string</li>
+<li>A contradiction is one of the most useful proof techniques. A rule of not elimination gives rise to a contradiction which we can check in a normal fashion by using the inputted reference lines and checking if they are the negations of each other. This same contradiction can be used in the following line for Rule of Bottom Elimination, i.e. can lead to any statement and can be verified.</li>
+<li>Using tautologies (Law of excluded middle) is a useful addition in proof rules and can be verified by truth value assignment to the statement and verifying whether the used statement is in-fact a tautology.</li>
 <li>Therefore, it is not outside the scope of our knowledge to implement the other proof rules. With sufficient effort we can come up with a full-fledged proof of natural deduction checker application similar to ones set up by Kansas university and other colleges by extension of this CS F214 assignment. <br  />
+<br  />
 <br  />
  </li>
 </ul>
