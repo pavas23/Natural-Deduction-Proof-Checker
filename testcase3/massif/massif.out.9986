@@ -1,0 +1,735 @@
+desc: (none)
+cmd: ./a.out
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=2327589
+mem_heap_B=72704
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=2443498
+mem_heap_B=73728
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=2462704
+mem_heap_B=74752
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=2479340
+mem_heap_B=74783
+mem_heap_extra_B=33
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=2486971
+mem_heap_B=74814
+mem_heap_extra_B=42
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=2495329
+mem_heap_B=74845
+mem_heap_extra_B=51
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=2506711
+mem_heap_B=74876
+mem_heap_extra_B=60
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=2511256
+mem_heap_B=74900
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=2511704
+mem_heap_B=74948
+mem_heap_extra_B=100
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=2512272
+mem_heap_B=75012
+mem_heap_extra_B=132
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=2512968
+mem_heap_B=75076
+mem_heap_extra_B=164
+mem_stacks_B=0
+heap_tree=detailed
+n3: 75076 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x48FAA99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B99: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011CA0: call_init (dl-init.c:30)
+    n1: 72704 0x4011CA0: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 2048 0x4AD2D03: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 2048 0x4AE2ECF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4AE1CA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 1024 0x4AE2F85: _IO_default_uflow (genops.c:362)
+     n1: 1024 0x495D4B0: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+      n1: 1024 0x496BB22: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+       n1: 1024 0x496BDA1: std::istream::operator>>(int&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n0: 1024 0x10C9FC: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 1024 0x4AE1F2F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+    n1: 1024 0x4AE06B4: _IO_new_file_xsputn (fileops.c:1244)
+     n1: 1024 0x4AE06B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+      n1: 1024 0x4AD43C0: fwrite (iofwrite.c:39)
+       n1: 1024 0x4987823: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n1: 1024 0x4987BDB: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+         n0: 1024 0x10C8B2: main (in /home/saksham/Documents/Logic/a.out)
+ n0: 324 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=2513364
+mem_heap_B=75108
+mem_heap_extra_B=180
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=2513792
+mem_heap_B=75140
+mem_heap_extra_B=196
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=2514252
+mem_heap_B=75172
+mem_heap_extra_B=212
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=2514744
+mem_heap_B=75204
+mem_heap_extra_B=228
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=2523833
+mem_heap_B=75204
+mem_heap_extra_B=228
+mem_stacks_B=0
+heap_tree=detailed
+n3: 75204 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x48FAA99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B99: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011CA0: call_init (dl-init.c:30)
+    n1: 72704 0x4011CA0: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 2048 0x4AD2D03: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 2048 0x4AE2ECF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4AE1CA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 1024 0x4AE2F85: _IO_default_uflow (genops.c:362)
+     n1: 1024 0x495D4B0: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+      n1: 1024 0x496BB22: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+       n1: 1024 0x496BDA1: std::istream::operator>>(int&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n0: 1024 0x10C9FC: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 1024 0x4AE1F2F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+    n1: 1024 0x4AE06B4: _IO_new_file_xsputn (fileops.c:1244)
+     n1: 1024 0x4AE06B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+      n1: 1024 0x4AD43C0: fwrite (iofwrite.c:39)
+       n1: 1024 0x4987823: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n1: 1024 0x4987BDB: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+         n0: 1024 0x10C8B2: main (in /home/saksham/Documents/Logic/a.out)
+ n0: 452 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=17
+#-----------
+time=2524155
+mem_heap_B=75200
+mem_heap_extra_B=232
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=2525489
+mem_heap_B=75224
+mem_heap_extra_B=248
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=2525937
+mem_heap_B=75272
+mem_heap_extra_B=272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=2526505
+mem_heap_B=75336
+mem_heap_extra_B=304
+mem_stacks_B=0
+heap_tree=detailed
+n3: 75336 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x48FAA99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B99: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011CA0: call_init (dl-init.c:30)
+    n1: 72704 0x4011CA0: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 2048 0x4AD2D03: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 2048 0x4AE2ECF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4AE1CA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 1024 0x4AE2F85: _IO_default_uflow (genops.c:362)
+     n1: 1024 0x495D4B0: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+      n1: 1024 0x496BB22: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+       n1: 1024 0x496BDA1: std::istream::operator>>(int&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n0: 1024 0x10C9FC: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 1024 0x4AE1F2F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+    n1: 1024 0x4AE06B4: _IO_new_file_xsputn (fileops.c:1244)
+     n1: 1024 0x4AE06B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+      n1: 1024 0x4AD43C0: fwrite (iofwrite.c:39)
+       n1: 1024 0x4987823: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n1: 1024 0x4987BDB: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+         n0: 1024 0x10C8B2: main (in /home/saksham/Documents/Logic/a.out)
+ n0: 584 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=21
+#-----------
+time=2527201
+mem_heap_B=75400
+mem_heap_extra_B=336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=2527597
+mem_heap_B=75432
+mem_heap_extra_B=352
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=2528025
+mem_heap_B=75464
+mem_heap_extra_B=368
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=2528485
+mem_heap_B=75496
+mem_heap_extra_B=384
+mem_stacks_B=0
+heap_tree=detailed
+n3: 75496 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x48FAA99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B99: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011CA0: call_init (dl-init.c:30)
+    n1: 72704 0x4011CA0: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 2048 0x4AD2D03: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 2048 0x4AE2ECF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4AE1CA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 1024 0x4AE2F85: _IO_default_uflow (genops.c:362)
+     n1: 1024 0x495D4B0: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+      n1: 1024 0x496BB22: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+       n1: 1024 0x496BDA1: std::istream::operator>>(int&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n0: 1024 0x10C9FC: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 1024 0x4AE1F2F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+    n1: 1024 0x4AE06B4: _IO_new_file_xsputn (fileops.c:1244)
+     n1: 1024 0x4AE06B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+      n1: 1024 0x4AD43C0: fwrite (iofwrite.c:39)
+       n1: 1024 0x4987823: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n1: 1024 0x4987BDB: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+         n0: 1024 0x10C8B2: main (in /home/saksham/Documents/Logic/a.out)
+ n0: 744 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=25
+#-----------
+time=2528977
+mem_heap_B=75528
+mem_heap_extra_B=400
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=2537447
+mem_heap_B=75504
+mem_heap_extra_B=384
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=2537519
+mem_heap_B=75484
+mem_heap_extra_B=364
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=2539241
+mem_heap_B=75500
+mem_heap_extra_B=388
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=2539479
+mem_heap_B=75532
+mem_heap_extra_B=420
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=2541257
+mem_heap_B=75549
+mem_heap_extra_B=443
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=2542714
+mem_heap_B=75569
+mem_heap_extra_B=463
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=2543162
+mem_heap_B=75617
+mem_heap_extra_B=487
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=2543730
+mem_heap_B=75681
+mem_heap_extra_B=519
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=2544426
+mem_heap_B=75745
+mem_heap_extra_B=551
+mem_stacks_B=0
+heap_tree=detailed
+n4: 75745 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x48FAA99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B99: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011CA0: call_init (dl-init.c:30)
+    n1: 72704 0x4011CA0: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 2048 0x4AD2D03: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 2048 0x4AE2ECF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4AE1CA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 1024 0x4AE2F85: _IO_default_uflow (genops.c:362)
+     n1: 1024 0x495D4B0: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+      n1: 1024 0x496BB22: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+       n1: 1024 0x496BDA1: std::istream::operator>>(int&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n0: 1024 0x10C9FC: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 1024 0x4AE1F2F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+    n1: 1024 0x4AE06B4: _IO_new_file_xsputn (fileops.c:1244)
+     n1: 1024 0x4AE06B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+      n1: 1024 0x4AD43C0: fwrite (iofwrite.c:39)
+       n1: 1024 0x4987823: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n1: 1024 0x4987BDB: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+         n0: 1024 0x10C8B2: main (in /home/saksham/Documents/Logic/a.out)
+ n1: 832 0x10D833: LinkedList::insertNode(char) (in /home/saksham/Documents/Logic/a.out)
+  n1: 832 0x10D9D8: Stack::push(char) (in /home/saksham/Documents/Logic/a.out)
+   n0: 832 in 2 places, all below massif's threshold (1.00%)
+ n0: 161 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=2548516
+mem_heap_B=75745
+mem_heap_extra_B=551
+mem_stacks_B=0
+heap_tree=peak
+n4: 75745 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x48FAA99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B99: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011CA0: call_init (dl-init.c:30)
+    n1: 72704 0x4011CA0: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 2048 0x4AD2D03: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 2048 0x4AE2ECF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4AE1CA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 1024 0x4AE2F85: _IO_default_uflow (genops.c:362)
+     n1: 1024 0x495D4B0: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+      n1: 1024 0x496BB22: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+       n1: 1024 0x496BDA1: std::istream::operator>>(int&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n0: 1024 0x10C9FC: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 1024 0x4AE1F2F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+    n1: 1024 0x4AE06B4: _IO_new_file_xsputn (fileops.c:1244)
+     n1: 1024 0x4AE06B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+      n1: 1024 0x4AD43C0: fwrite (iofwrite.c:39)
+       n1: 1024 0x4987823: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n1: 1024 0x4987BDB: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+         n0: 1024 0x10C8B2: main (in /home/saksham/Documents/Logic/a.out)
+ n1: 832 0x10D833: LinkedList::insertNode(char) (in /home/saksham/Documents/Logic/a.out)
+  n1: 832 0x10D9D8: Stack::push(char) (in /home/saksham/Documents/Logic/a.out)
+   n0: 832 in 2 places, all below massif's threshold (1.00%)
+ n0: 161 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=36
+#-----------
+time=2548600
+mem_heap_B=75708
+mem_heap_extra_B=508
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=2549730
+mem_heap_B=75725
+mem_heap_extra_B=531
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=2550178
+mem_heap_B=75773
+mem_heap_extra_B=571
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=2550746
+mem_heap_B=75837
+mem_heap_extra_B=603
+mem_stacks_B=0
+heap_tree=detailed
+n4: 75837 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x48FAA99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B99: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011CA0: call_init (dl-init.c:30)
+    n1: 72704 0x4011CA0: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 2048 0x4AD2D03: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 2048 0x4AE2ECF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4AE1CA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 1024 0x4AE2F85: _IO_default_uflow (genops.c:362)
+     n1: 1024 0x495D4B0: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+      n1: 1024 0x496BB22: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+       n1: 1024 0x496BDA1: std::istream::operator>>(int&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n0: 1024 0x10C9FC: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 1024 0x4AE1F2F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+    n1: 1024 0x4AE06B4: _IO_new_file_xsputn (fileops.c:1244)
+     n1: 1024 0x4AE06B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+      n1: 1024 0x4AD43C0: fwrite (iofwrite.c:39)
+       n1: 1024 0x4987823: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n1: 1024 0x4987BDB: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+         n0: 1024 0x10C8B2: main (in /home/saksham/Documents/Logic/a.out)
+ n1: 944 0x10D833: LinkedList::insertNode(char) (in /home/saksham/Documents/Logic/a.out)
+  n1: 944 0x10D9D8: Stack::push(char) (in /home/saksham/Documents/Logic/a.out)
+   n0: 944 in 2 places, all below massif's threshold (1.00%)
+ n0: 141 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=40
+#-----------
+time=2552723
+mem_heap_B=75820
+mem_heap_extra_B=580
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=2553678
+mem_heap_B=75837
+mem_heap_extra_B=603
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=2554126
+mem_heap_B=75885
+mem_heap_extra_B=627
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=2554694
+mem_heap_B=75949
+mem_heap_extra_B=659
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=2556657
+mem_heap_B=75932
+mem_heap_extra_B=636
+mem_stacks_B=0
+heap_tree=detailed
+n4: 75932 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x48FAA99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B99: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011CA0: call_init (dl-init.c:30)
+    n1: 72704 0x4011CA0: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 2048 0x4AD2D03: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 2048 0x4AE2ECF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4AE1CA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 1024 0x4AE2F85: _IO_default_uflow (genops.c:362)
+     n1: 1024 0x495D4B0: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+      n1: 1024 0x496BB22: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+       n1: 1024 0x496BDA1: std::istream::operator>>(int&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n0: 1024 0x10C9FC: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 1024 0x4AE1F2F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+    n1: 1024 0x4AE06B4: _IO_new_file_xsputn (fileops.c:1244)
+     n1: 1024 0x4AE06B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+      n1: 1024 0x4AD43C0: fwrite (iofwrite.c:39)
+       n1: 1024 0x4987823: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n1: 1024 0x4987BDB: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+         n0: 1024 0x10C8B2: main (in /home/saksham/Documents/Logic/a.out)
+ n1: 1056 0x10D833: LinkedList::insertNode(char) (in /home/saksham/Documents/Logic/a.out)
+  n2: 1056 0x10D9D8: Stack::push(char) (in /home/saksham/Documents/Logic/a.out)
+   n1: 832 0x10B5F1: conjunctionElimination(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /home/saksham/Documents/Logic/a.out)
+    n0: 832 0x10CE4B: main (in /home/saksham/Documents/Logic/a.out)
+   n0: 224 in 1 place, below massif's threshold (1.00%)
+ n0: 124 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=45
+#-----------
+time=2558603
+mem_heap_B=75948
+mem_heap_extra_B=660
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=2558841
+mem_heap_B=75980
+mem_heap_extra_B=676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=2561961
+mem_heap_B=76001
+mem_heap_extra_B=695
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=2562445
+mem_heap_B=76049
+mem_heap_extra_B=719
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=2562862
+mem_heap_B=76097
+mem_heap_extra_B=743
+mem_stacks_B=0
+heap_tree=detailed
+n4: 76097 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x48FAA99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B99: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011CA0: call_init (dl-init.c:30)
+    n1: 72704 0x4011CA0: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 2048 0x4AD2D03: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 2048 0x4AE2ECF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4AE1CA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 1024 0x4AE2F85: _IO_default_uflow (genops.c:362)
+     n1: 1024 0x495D4B0: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+      n1: 1024 0x496BB22: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+       n1: 1024 0x496BDA1: std::istream::operator>>(int&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n0: 1024 0x10C9FC: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 1024 0x4AE1F2F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+    n1: 1024 0x4AE06B4: _IO_new_file_xsputn (fileops.c:1244)
+     n1: 1024 0x4AE06B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+      n1: 1024 0x4AD43C0: fwrite (iofwrite.c:39)
+       n1: 1024 0x4987823: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n1: 1024 0x4987BDB: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+         n0: 1024 0x10C8B2: main (in /home/saksham/Documents/Logic/a.out)
+ n1: 1200 0x10D833: LinkedList::insertNode(char) (in /home/saksham/Documents/Logic/a.out)
+  n2: 1200 0x10D9D8: Stack::push(char) (in /home/saksham/Documents/Logic/a.out)
+   n1: 832 0x10B5F1: conjunctionElimination(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /home/saksham/Documents/Logic/a.out)
+    n0: 832 0x10CE4B: main (in /home/saksham/Documents/Logic/a.out)
+   n0: 368 in 3 places, all below massif's threshold (1.00%)
+ n0: 145 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=50
+#-----------
+time=2563017
+mem_heap_B=76113
+mem_heap_extra_B=751
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=2563180
+mem_heap_B=76129
+mem_heap_extra_B=759
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=2563351
+mem_heap_B=76145
+mem_heap_extra_B=767
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=2563530
+mem_heap_B=76161
+mem_heap_extra_B=775
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=2563717
+mem_heap_B=76177
+mem_heap_extra_B=783
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=2569454
+mem_heap_B=76156
+mem_heap_extra_B=764
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=2575798
+mem_heap_B=76125
+mem_heap_extra_B=755
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=2575897
+mem_heap_B=76094
+mem_heap_extra_B=746
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=2575982
+mem_heap_B=76063
+mem_heap_extra_B=737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=2583927
+mem_heap_B=3328
+mem_heap_extra_B=720
+mem_stacks_B=0
+heap_tree=detailed
+n3: 3328 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2048 0x4AD2D03: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 2048 0x4AE2ECF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4AE1CA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 1024 0x4AE2F85: _IO_default_uflow (genops.c:362)
+     n1: 1024 0x495D4B0: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+      n1: 1024 0x496BB22: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+       n1: 1024 0x496BDA1: std::istream::operator>>(int&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n0: 1024 0x10C9FC: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 1024 0x4AE1F2F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+    n1: 1024 0x4AE06B4: _IO_new_file_xsputn (fileops.c:1244)
+     n1: 1024 0x4AE06B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+      n1: 1024 0x4AD43C0: fwrite (iofwrite.c:39)
+       n1: 1024 0x4987823: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+        n1: 1024 0x4987BDB: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+         n0: 1024 0x10C8B2: main (in /home/saksham/Documents/Logic/a.out)
+ n1: 1280 0x10D833: LinkedList::insertNode(char) (in /home/saksham/Documents/Logic/a.out)
+  n4: 1280 0x10D9D8: Stack::push(char) (in /home/saksham/Documents/Logic/a.out)
+   n1: 832 0x10B5F1: conjunctionElimination(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /home/saksham/Documents/Logic/a.out)
+    n0: 832 0x10CE4B: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 224 0x10BC11: implicationElimination(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /home/saksham/Documents/Logic/a.out)
+    n0: 224 0x10D1C8: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 176 0x10A5D1: conjunctionIntroduction(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /home/saksham/Documents/Logic/a.out)
+    n0: 176 0x10CCE3: main (in /home/saksham/Documents/Logic/a.out)
+   n1: 48 0x10C3D0: modusTollens(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /home/saksham/Documents/Logic/a.out)
+    n0: 48 0x10D330: main (in /home/saksham/Documents/Logic/a.out)
+ n0: 0 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=2585452
+mem_heap_B=2304
+mem_heap_extra_B=712
+mem_stacks_B=0
+heap_tree=empty
