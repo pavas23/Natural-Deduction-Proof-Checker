@@ -810,7 +810,7 @@ bool modusTollens(string proof,string proofLines[]){
 
         string rightPartAfterNegationInImpliesStatement = "~" + rightPart;
 
-        if(newNegationOfRightPart ==rightPartAfterNegationInImpliesStatement){
+        if(newNegationOfRightPart == rightPartAfterNegationInImpliesStatement){
 
             // now we have to check wheter result matches with negation of left part in implies statement
             string leftPartAfterNegationInImplicationStatement = "~" + leftPart;
@@ -853,9 +853,9 @@ int main(void)
             getline(cin >> ws, proofLines[i]);
         }
 
-        // now ownwards all statements are not premises
         int index = 0;
         int flag = 0;
+
         for(int i=0;i<n;i++){
             index = proofLines[i].find('/');
             if(index < proofLines[i].length()){
@@ -914,7 +914,7 @@ int main(void)
                             break;
                         }
                     }
-                    else if((index+1 < proofLines[i].length()) && (proofLines[i][index+1] == 'M')){
+                    else if((index+2 < proofLines[i].length()) && (proofLines[i][index+1] == 'M') && (proofLines[i][index+2] == 'T') ){
                         // MT
                         if(!modusTollens(proofLines[i],proofLines)){
                             cout<<endl;
@@ -925,9 +925,16 @@ int main(void)
                             break;
                         }
                     }
-                    else if((index+1 < proofLines[i].length()) && (proofLines[i][index+1] == 'P')){
+                    else if((index+1 < proofLines[i].length()) && ((proofLines[i][index+1] == 'P') || (proofLines[i][index+1] == 'p'))){
                         // premise
                     }
+                    else{
+                        cout<<endl; 
+                        cout<<"Invalid Proof!"<<endl;
+                        cout<<"Error in line Number "<<i+1<<endl;
+                        flag = 1;
+                        break;
+                    } 
             }
             else{
                     cout<<endl; 
