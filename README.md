@@ -35,9 +35,11 @@ b)) is invalid, (a ∧ b) is valid, (a ∧ b ∧ c) is invalid, p is valid, (p) 
 ### Screenshots
 
 ![code](https://user-images.githubusercontent.com/97559428/205979908-fd1fa78f-0bb8-47c2-86aa-623d601ac990.png)
-
+<br/>
+<br/>
 ![graph](https://user-images.githubusercontent.com/97559428/206716808-51a2821e-be79-4e62-bbb6-e98f278c04e5.jpg)
-
+<br/>
+<br/>
 ![msf3](https://user-images.githubusercontent.com/97559428/206716848-65ea03f9-ad38-43d4-a576-4f1c6be41c92.png)
 
 
